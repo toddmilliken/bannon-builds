@@ -1,0 +1,179 @@
+// Px to Em conversion 
+// Source: http://web-design-weekly.com/snippets/converts-pixels-to-ems-with-sass/
+// Usage: font-size: em(16);
+
+$browser-context: 16; // Default
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em
+}
+
+
+/*---------------------------------------------------------
+ * !MEDIA QUERIES
+ *---------------------------------------------------------*/
+ 	
+ 	$inner-change-width: $widthCenter + 60;
+	$mob-menu-width: 1024;
+	$tablet-width: 900px;
+	$smartphone-landscape-width: 700px;
+	$smartphone-portrait-width: 500px;
+	
+	@mixin inner-change-down {
+		@media (max-width: #{ em($inner-change-width) }) {
+			@content;
+		}
+	}
+	
+	@mixin mobile-menu-up {
+		@media (min-width: #{ em($mob-menu-width + 1) }) {
+			@content;
+		}
+	}
+
+	@mixin mobile-menu-down {
+		@media (max-width: #{ em($mob-menu-width) }) {
+			@content;
+		}
+	}
+	
+	@mixin tablet-down {
+		@media (max-width: #{ em($tablet-width) }) {
+			@content;
+		}
+	}
+	
+	@mixin smartphone-landscape-down {
+		@media (max-width: #{ em($smartphone-landscape-width )}) {
+			@content;
+		}
+	}
+	
+	@mixin smartphone-portrait-down {
+  	    @media (max-width: #{$smartphone-portrait-width}) {
+			@content;
+		}
+	}
+
+
+//! FILTER
+// https://dvcs.w3.org/hg/FXTF/raw-file/tip/filters/index.html 
+//
+// grayscale      ex: filter: grayscale(100%);
+// sepia          ex: filter: sepia(100%);
+// saturate       ex: filter: saturate(0%);
+// hue-rotate     ex: filter: hue-rotate(45deg);
+// invert         ex: filter: invert(100%);
+// brightness     ex: filter: brightness(15%);
+// contrast       ex: filter: contrast(200%);
+// blur           ex: filter: blur(2px);
+
+@mixin filter($filter-type,$filter-amount) { 
+  -webkit-filter: $filter-type+unquote('(#{$filter-amount})');
+  -moz-filter: $filter-type+unquote('(#{$filter-amount})');
+  -ms-filter: $filter-type+unquote('(#{$filter-amount})');
+  -o-filter: $filter-type+unquote('(#{$filter-amount})');
+  filter: $filter-type+unquote('(#{$filter-amount})');
+  
+  @if $filter-type == "grayscale" {
+	  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+  }
+  
+  
+}
+
+
+/*---------------------------------------------------------
+ * !ROTATE MIXIN
+ * Source: http://hugogiraudel.com/2013/04/02/items-on-circle/
+ *
+ * Mixin to put items on a circle
+ * [1] - Allows children to be absolutely positioned
+ * [2] - Allows the mixin to be used on a list
+ * [3] - In case box-sizing: border-box has been enabled
+ * [4] - Allows any type of direct children to be targeted
+ *
+ *---------------------------------------------------------*/
+
+@mixin putOnCircle( 
+          $nb-items, //Number of items
+          $circle-size, //Parent size
+          $item-size, //Item size
+          $class-for-IE: false //Base class name, false means use of pseudo-selectors
+       ) {
+  $half-item:     $item-size / 2;
+  $half-parent: $circle-size / 2;
+  
+  position: relative;               /* [1] */
+  width:  $circle-size;
+  height: $circle-size;
+  padding: 0;
+  border-radius: 50%; 
+  list-style: none;                 /* [2] */ 
+  @include box-sizing(content-box); /* [3] */ 
+  
+  > * {                             /* [4] */
+    display: block;
+    position: absolute;
+    top:  50%; 
+    left: 50%;
+    width:  $item-size;
+    height: $item-size;
+    margin: -$half-item;
+  
+    $angle: 360 / $nb-items;
+    $rot: 0;
+    @for $i from 1 to $nb-items+1 {
+      
+      // If no support for IE8-
+      
+      @if $class-for-IE == false {
+        &:nth-of-type(#{$i}) {
+          @include transform(rotate(#{$rot}deg) translate($half-parent) rotate(-#{$rot}deg));
+        }
+      }
+      
+      // If support for IE8-  
+      
+      @else {
+        &.#{$class-for-IE}#{$i} {
+          // If CSS transforms are not supported
+          $mt: sin($rot * pi() / 180) * $half-parent - $half-item;
+          $ml: cos($rot * pi() / 180) * $half-parent - $half-item;
+          margin: $mt 0 0 $ml;
+        }
+      }
+      $rot: $rot + $angle;
+    }
+  }
+}
+/*---------------------------------------------------------
+ * !ROBOTO
+ *
+ * OPTIONS
+ * $weight
+ * - 300
+ * - 400
+ * - 500
+ * - 700
+ * - 900
+ *
+ * $style
+ * - italic
+ *---------------------------------------------------------*/
+	
+	@mixin bodyCopy($font-weight,$style: 'normal', $font-family: 'Karla') { 
+		font-family: $font-family, arial, sans-serif;
+		font-weight: $font-weight;
+		@if $style == 'italic' {
+			font-style: italic;
+		} 
+	}
+
+	@mixin heading($font-weight,$style: 'normal', $font-family: 'Cabin') { 
+		font-family: $font-family, arial, sans-serif;
+		font-weight: $font-weight;
+		@if $style == 'italic' {
+			font-style: italic;
+		} 
+	}

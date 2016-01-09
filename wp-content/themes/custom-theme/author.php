@@ -1,0 +1,1 @@
+<?php load_template(TEMPLATEPATH . '/home.php'); ?>
