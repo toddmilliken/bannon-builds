@@ -4,22 +4,23 @@
 !wp-content/
 !wp-config.php
 !wordpress.txt
-!bannon_cms.sql
+!kwer1.sql
 
 # Ignore everything in the "wp-content" directory, except the "plugins" and "themes" directories.
 wp-content/*
 !wp-content/plugins/
 !wp-content/themes/
 
+# IGNORE UPLOADS DIRECTORY (for now..) 
+!wp-content/uploads/
+ 
 # Ignore everything in the "plugins" directory, except the plugins you specify
 # wp-content/plugins/*
-
+# !wp-content/plugins/my-single-file-plugin.php
+# !wp-content/plugins/my-directory-plugin/
+ 
 # Ignore everything in the "themes" directory, except the themes you specify
 wp-content/themes/*
-!wp-content/themes/custom-theme/
-
-# Ignore the ".sass-cache" directory
+!wp-content/themes/kraftwerke/
 
 .sass-cache/
-
-# Thanks to: https://plausiblethought.net/wordpress-git-workflow/
