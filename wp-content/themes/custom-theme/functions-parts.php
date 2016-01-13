@@ -50,24 +50,21 @@ class Custom_Parts extends Custom_Theme
 
 	function get_site_logo( $echo = true ) {
 
-		if ( $logo = get_option('options_site_logo') ) :
+		if ( $logo = get_field('opts_logo', 'option') ) :
 			
-			$html .= '<a class="logo" href="' . home_url() . '"><img src="' . $logo['url'] . '" alt="' . $logo['alt'] . '" />';
-			if ( $logo_text = get_option('options_site_logo_text') ) :
-				$html .= '<strong>' . $logo_text . '</strong>';
+			$html .= '
+				<a class="logo" href="' . home_url() . '">
+					<img src="' . $logo['url'] . '" alt="' . $logo['alt'] . '" />
+				</a>
+			';
+
+			if ( $echo ) :
+				echo $html;
+			else : 
+				return $html;
 			endif;
-			$html .= '</a>';
-		else : 
-			$html .= '<div class="logo-text"><a href="' . home_url() . '"><span class="logo-text-primary">' . get_field('opts_logo_text_1', 'options') . '</span><span class="logo-text-tagline">' . get_field('opts_logo_text_2', 'options') . '</span></a></div>';
+
 		endif;
-
-
-		if ( $echo ) :
-			echo $html;
-		else : 
-			return $html;
-		endif;
-
 	}
 
 

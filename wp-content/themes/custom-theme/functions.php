@@ -1,14 +1,49 @@
  <?php
-include_once('functions-blog.php');
+
 include_once('functions-client.php');
 include_once('functions-parts.php');
 
 Custom_Theme::_init();
 
 class Custom_Theme {
+
+	// ! @static array $admin_menus_to_hide A list of admin menus to hide
+  	static $admin_menus_to_hide = array(
+		/*
+		'index.php',						// Dashboard
+		*/'edit.php',/*)							// Posts
+		'upload.php',						// Media
+		'link-manager.php',					// Links
+		'edit.php?post_type=page',			// Pages
+		*/'edit-comments.php', /*				// Comments
+		'themes.php',						// Themes
+		'plugins.php',						// Plugins
+		'users.php',						// Users
+		'tools.php',						// Tools
+		'options-general.php'			// Settings
+		*/
+	);
+
+	// ! @static array $dashboard_widgets_to_hide A list of dashboard widgets to hide
+	static $dashboard_widgets_to_hide = array(
+		'side' => array(
+		'dashboard_quick_press',
+		'dashboard_recent_drafts',
+		'dashboard_primary',
+		'dashboard_secondary',
+	),
+		'normal' => array(
+		'dashboard_incoming_links',
+		'dashboard_right_now',
+		'dashboard_plugins',
+		'dashboard_recent_comments',
+		),
+	);
 	
 	public static function _init() {
 		
+		show_admin_bar(false);
+
 		//! ADD OPTIONS PAGE
 		if ( function_exists('acf_add_options_page') ) :
 			acf_add_options_page();
@@ -16,6 +51,16 @@ class Custom_Theme {
 
 		// Add featured image support
 		add_theme_support( 'post-thumbnails' ); 
+		add_image_size( 'mobile', 680 );
+
+		// Add HTML5 support for the search form.
+		add_theme_support( 'html5', array( 'search-form' ) );
+		
+		// Add MIME types; not used in multisite
+		add_filter('upload_mimes', array(__CLASS__, 'add_mime_types'));
+		
+		// Push Yoast to the bottom of the page
+		add_filter( 'wpseo_metabox_prio', function() { return 'low';});
 
 		// Disable updates
 		//add_filter('pre_site_transient_update_core', create_function('$a', "return null;"));
@@ -31,11 +76,11 @@ class Custom_Theme {
 		}
 
 		add_action( 'init', array(__CLASS__, 'register_theme_menus' ));
-		add_action( 'widgets_init', array(__CLASS__, 'kraftwerke_widgets_init' ));
+		add_action( 'widgets_init', array(__CLASS__, 'custom_theme_widgets_init' ));
 		
 		/*	Admin hooks  */
-		if ( is_admin() ) {
-			
+		if ( is_admin() ) {			
+			add_action('admin_menu', array(__CLASS__, 'hide_admin_menu_items'));
 			add_filter( 'tiny_mce_before_init', array(__CLASS__, 'my_mce_before_init_insert_formats') );
 			return;
 		}
@@ -48,33 +93,27 @@ class Custom_Theme {
 	}
 
 	public static function register_theme_menus() {
-		register_nav_menus(array(
-			'main-menu' => __( 'Main Menu' ),
-			'footer-menu' => __( 'Footer Menu' )
-		));
+		register_nav_menus(
+			array(
+				'main-menu' => __( 'Main Menu' ),
+				'utility-menu' => __( 'Utility Menu' )
+			)
+		);
 	}
 
 	/**
 	 * Register our sidebars and widgetized areas.
 	 *
 	 */
-	public static function kraftwerke_widgets_init() {
+	public static function custom_theme_widgets_init() {
 
 		register_sidebar(array(
 			'name'          => 'Sidebar',
-			'id'            => 'interior-sidebar',
+			'id'            => 'sidebar-right',
 			'before_widget' => '<div class="widget">',
 			'after_widget'  => '</div>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		));
-		register_sidebar(array(
-			'name'          => 'Blog Sidebar',
-			'id'            => 'blog-sidebar',
-			'before_widget' => '<div class="widget">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h2 class="widget-title widget-title-blog">',
-			'after_title'   => '</h2>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
 		));
 
 	}
@@ -82,29 +121,31 @@ class Custom_Theme {
 	public static function enqueue_scripts() {
 		wp_enqueue_script('jquery');
 		wp_enqueue_script('modernizr', get_template_directory_uri() . '/core/js/modernizr.min.js',	array('jquery'));
-		//wp_enqueue_script('picturefill-bg', get_template_directory_uri() . '/core/js/picturefill-background-mod.js', array(), null);
+		wp_enqueue_script('picturefill-bg', get_template_directory_uri() . '/core/js/picturefill-background-mod.js', array(), null);
 		//wp_enqueue_script('picturefill', get_template_directory_uri() . '/core/js/picturefill.min.js', array('picturefill-bg'), null);
 		wp_enqueue_script('jquery-plugins', get_template_directory_uri() . '/core/js/plugins.js', array('jquery'), null, true);
 		wp_enqueue_script('global', get_template_directory_uri() . '/core/js/global.js', array('jquery', 'jquery-plugins'), null, true);		
-		if ( is_page_template('_templates/tmpl-contact.php') ) :
-			wp_enqueue_script('google-map', 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false', array('jquery'));
-		endif;
+		
+		// for acf map field. 
+		wp_enqueue_script('google-map', 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false', array('jquery'));
+		
+		// if comments are open, get comment reply script.
 		if ( is_singular() && comments_open() && ( get_option('thread_comments') == 1 ) ) :
 	    	wp_enqueue_script('comment-reply');
 	    endif;
+
 	}
 
 	public static function enqueue_styles() {
-		wp_enqueue_style('fonts', 'http://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic', array(), null);
-		wp_enqueue_style('fonts-2', 'http://fonts.googleapis.com/css?family=Cabin:400,500,700', array(), null);
+		wp_enqueue_style('fonts', 'https://fonts.googleapis.com/css?family=Lato:400,300,400italic,700,700italic,900', array(), null);
 		wp_enqueue_style('icons', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', array(), null);
-		wp_enqueue_style('global', get_template_directory_uri() . '/core/css/global.css', array('fonts', 'fonts-2', 'icons'), null);
+		wp_enqueue_style('global', get_template_directory_uri() . '/core/css/global.css', array('fonts', 'icons'), null);
 		wp_enqueue_style('owl-carousel', get_template_directory_uri() . '/core/css/owl.carousel.css', array('global'), null);
 	}
 
 
-   public static function change_excerpt_length( $length )
-   {
+	public static function change_excerpt_length( $length )
+	{
    		return 30;
 	}
 
@@ -140,6 +181,7 @@ class Custom_Theme {
 	  
 	} 
 
+
 	public static function register_post_types()
 	{
 		include_once get_stylesheet_directory() . '/core/includes/post-types.php';
@@ -156,6 +198,8 @@ class Custom_Theme {
 	
 	public static function body_class( $classes )
 	{
+		$classes = array();
+
 		foreach ( $classes as &$class )
 		{
 			$class = str_replace(array('-php', 'page-template-' , 'page-template' , '_templates'), '', $class);
@@ -164,19 +208,69 @@ class Custom_Theme {
 		if ( !is_front_page() )
 		{
 			$classes[] = 'interior';
+		} else {
+			$class[] = 'home';
 		}
 		
 		if ( is_active_sidebar('callouts') )
 		{
 			$classes[] = 'has-callouts';
 		}
-		
-		if ( Custom_Blog::is_blog() )
-		{
-			$classes[] = 'is-blog';
-		}
 
 		return $classes;
+	}
+
+
+   /*--------------------------------------------------------------------------------------
+    *
+    * Hide admin menu items
+    * @uses $menu
+    *
+    *--------------------------------------------------------------------------------------*/
+    
+	public static function hide_admin_menu_items()
+	{
+		global $menu;
+
+		if ( empty(self::$admin_menus_to_hide) ) return;
+		
+		foreach ( $menu as $key => $item )
+		{
+			if ( in_array($item[2], self::$admin_menus_to_hide) )
+			{
+				unset($menu[$key]);
+			}
+		}
+	}
+   
+   /*--------------------------------------------------------------------------------------
+    *
+    * Hide dashboard widgets
+    * @uses $wp_meta_boxes
+    *
+    *--------------------------------------------------------------------------------------*/
+    
+   public static function hide_dashboard_widgets()
+   {
+    	global $wp_meta_boxes;
+    	
+    	foreach ( (array) self::$dashboard_widgets_to_hide as $context => $boxes )
+    	{
+    		foreach ( $boxes as $boxname )
+    		{
+    			unset($wp_meta_boxes['dashboard'][$context]['core'][$boxname]);
+    		}
+    	}
+   }
+
+	
+	public static function add_mime_types($mimes) {
+		//! EXAMPLE: $mimes['extension'] = 'mime/type';
+		
+		$mimes['doc'] = 'application/msword'; 
+		$mimes['svg'] = 'image/svg+xml';
+		
+		return $mimes;
 	}
 
 	

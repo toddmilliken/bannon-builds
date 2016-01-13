@@ -28,13 +28,14 @@
 
 $post_types = array(
 	array(
-		'slug' => 'home-panel',
-		'display_plural' => 'Home Panels',
-		'display_singular' => 'Home Panel',
-		'description' => 'Home Panel posts that appear in the home page slider.',
+		'slug' => 'project',
+		'display_plural' => 'Projects',
+		'display_singular' => 'Project',
+		'description' => '',
 		'exclude_from_search' => true,
 		'hierarchical' => true,
-		'supports' => array('title', 'editor', 'page-attributes'),
+		'supports' => array('title', 'page-attributes'),
+		'menu_icon' => 'dashicons-admin-multisite',
 	),
 );
 

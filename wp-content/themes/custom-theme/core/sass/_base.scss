@@ -62,10 +62,11 @@
 	}
 	
 	hr {
-		background: #666;
+		background: $gray;
 		border: none;
 		clear: both;
 		height: 1px;
-		margin-bottom: em(30);
+		margin-bottom: em($gutter);
+		margin-top: em($gutter);
 		width: 100%;
 	}

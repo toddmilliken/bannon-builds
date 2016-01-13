@@ -4,9 +4,8 @@
 	<div class="inner">
 		<div class="page-title">
 			<?php Custom_Client::get_page_title(); ?>
-			<?php Custom_Client::get_introductory_text(); ?>
 		</div>
-		<?php get_sidebar('interior'); ?>
+		<?php get_sidebar('right'); ?>
 		<div class="content">
 			<?php if ( have_posts() ) : 
 				while ( have_posts() ) : the_post(); 

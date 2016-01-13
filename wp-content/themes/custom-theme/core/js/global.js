@@ -1,7 +1,6 @@
 (function($) { 
   
     $(document).ready(function($) { 
-        initHomeWheel();
         initOwlCarousel();
 		initMobMenu();
         initMenuHover(); 
@@ -18,39 +17,73 @@
     $(window).load(function($) {
         initLazyLoadBackground();
     });
-
-    //! Home Page Wheel - add classes using hover intent.
-    var initHomeWheel = function() {
-        $('.circle-container').hoverIntent({ 
-            "over" : function() { 
-                $(this).addClass('hover'); 
-                $('.circle-container').addClass('paused');
-            }, 
-            "out" : function() { 
-                $('.circle-container').removeClass('paused');  
-            }, 
-            "timeout" : 500 
-        });
-    };
     
     //! Home Panel Owl Carousel Functions
     var initOwlCarousel = function(){
-	    $('.panels').owlCarousel({
-            dots: true,
-            items: 1,
-            loop: true,
-            nav: true,
-            navText: '',
-        });	   
+        
+        //! HOME PANELS SLIDER
+        if ( $('.panel').length  ) {            
+            var $panels = $('.panels'),
+                speed = 500,
+                timeOut = 7000,
+                owlParams = {
+                    autoplay: 1,
+                    autoplayTimeout: timeOut,
+                    animateOut: 'fadeOut',
+                    dots: 1,
+                    items: 1,
+                    loop: 1,
+                    //mouseDrag: 0,
+                };
+        
+
+            //! fadeIn background
+            $(window).load(function(){
+                $('.panel-bg').addClass('fadeIn');
+            });
+            
+            
+            //! init panels carousel
+            $panels.owlCarousel(owlParams);
+            
+            // stop loop
+            $panels.on('changed.owl.carousel', function(e){
+                var currentIndex = e.item.index,
+                    currentPanel = $(e.target).find('.owl-item').eq(currentIndex).find('.panel');
+                
+                
+                if ( currentPanel.hasClass('panel-1') ) {
+                    
+                    //! destroy and rebuild after completing the looping back to 1, without autoplay parameters
+                    setTimeout(function(){
+                        $panels.trigger('destroy.owl.carousel').removeClass('owl-carousel owl-loaded');
+                        $panels.find('.owl-stage-outer').children().unwrap();
+                        owlParams['autoplay'] = 0; // turn off autoplay 
+                        
+                        $panels.owlCarousel(owlParams);
+                    }, (speed * 2));
+                    
+                }
+            });
+            
+        }
+        
     };
 		
     //! Mobile Menu - Toggle classes for mobile navigation transitions. 
     var initMobMenu = function() {         
         $('.mob-menu').click(function(){
-			$(this).toggleClass('active');
+            $this = $(this);
+			$this.toggleClass('active');
 			$('.site-wrap').toggleClass('pushed');
 			$('.site-navigation').toggleClass('pushed');
 			
+            if ( $this.hasClass('active') ) {
+                $this.find('span').text('Close');
+            } else {
+                $this.find('span').text('Menu');
+            }
+
 		}); 
     }; 
       
