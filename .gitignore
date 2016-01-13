@@ -4,7 +4,7 @@
 !wp-content/
 !wp-config.php
 !wordpress.txt
-!bannpn_cms.sql
+!bannon_cms.sql
 
 # Ignore everything in the "wp-content" directory, except the "plugins" and "themes" directories.
 wp-content/*
