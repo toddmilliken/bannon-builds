@@ -23,4 +23,6 @@ wp-content/*
 wp-content/themes/*
 !wp-content/themes/custom-theme/
 
-~/.sass-cache
+# Ignore the ".sass-cache" directory and .DS_Store files
+.sass-cache/
+.DS_Store
