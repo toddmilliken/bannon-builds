@@ -1,0 +1,211 @@
+/*---------------------------------------------------------
+ * !SITE HEAD - GENERAL & LOGO
+ *---------------------------------------------------------*/
+
+
+	.site-head {
+		@include background-image(linear-gradient(rgba(255,255,255,0.9) 20%,rgba(255,255,255,0)));
+		//background-color: rgba(255,255,255,0.9);
+		height: em(90);
+		position: fixed;
+			top: 0;
+			right: 0;
+			left: 0;
+			z-index: 100;
+	
+		.logo {
+			float: left;
+			margin-top: em(20);
+			margin-left: em(20);
+			position: relative;
+				z-index: 1;
+			width: em(175);
+
+			img {
+				height: auto;
+				width: 100%;
+			}	
+
+		}
+	}
+	
+	
+/*---------------------------------------------------------
+ * !MOBILE MENU ICON
+ *---------------------------------------------------------*/
+ 
+ 	.mob-menu {
+ 		@include backface-visibility(hidden);
+		@include transition(all 500ms ease 0s);
+		border: 1px solid $secondaryColor;
+		color: $secondaryColor;
+		display: block; 
+		padding-top: em(6);
+		padding-bottom: em(4);
+		position: absolute;
+			top: em(16);
+			right: em(20);
+			z-index: 300;
+		text-align: center;
+		width: em(60);
+
+		span {
+			@include heading(700);
+			color: $secondaryColor;
+			display: block;
+			font-size: em(12);
+			letter-spacing: 0.1em;
+			padding-top: em(4, 12);	
+			text-align: center;
+			text-transform: uppercase;
+		}
+			
+		> div {
+			background: $secondaryColor;
+			display: inline-block;
+			height: em(4);
+			position: relative;
+			transition: .3s;
+			width: em(38);
+			
+			&:before,
+			&:after {
+				background: $secondaryColor;
+				display: block;
+				content: '';
+				height: 4px;
+				position: absolute;
+					left: 0;
+					top: -8px;
+				transition: .3s;
+				-webkit-backface-visibility: hidden;
+				backface-visibility: hidden;
+				width: em(38);
+				
+			}
+			
+			&:after {
+				top: auto;
+				bottom: -8px;
+			}
+		}
+		
+		&.active {
+			@include transform(translateX(em(-170)));
+			
+			> div {
+				background: none;
+				
+				&:before,
+				&:after {
+					transform-origin: 50% 50%;
+					bottom: 0;
+					left: em(6);
+					top:0;
+					width: em(24);
+				}
+				
+				&:before {
+						-webkit-transform: rotate3d(0,0,1,45deg);
+						-moz-transform: rotate3d(0,0,1,45deg);
+						-o-transform: rotate3d(0,0,1,45deg);
+						-ms-transform: rotate3d(0,0,1,45deg);
+					transform: rotate3d(0,0,1,45deg);
+				}
+				
+				&:after {
+						-webkit-transform: rotate3d(0,0,1,-45deg);
+						-moz-transform: rotate3d(0,0,1,-45deg);
+						-o-transform: rotate3d(0,0,1,-45deg);
+						-ms-transform: rotate3d(0,0,1,-45deg);
+					transform: rotate3d(0,0,1,-45deg);
+				}
+			}
+		}
+
+	}
+	
+
+ 	.site-navigation {
+ 		@include transition(all 500ms ease 0s);
+ 		@include transform(translate(100%, 0));
+ 		background: #fff;
+ 		box-shadow: inset 1px 1px 5px  rgba(0,0,0,0.1);
+ 		color: $darkGray;
+ 		overflow: hidden;
+ 		padding: em(20) 0;
+ 		position: fixed;
+	 		top: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 999;
+		width: em(180);
+
+		&.pushed {
+			@include transform(translate(0, 0));
+		}
+ 	}
+
+ 	$menu_size: 22;
+ 	.main-menu {
+		@include heading(400);
+	 	list-style: none;
+	 	text-align: center;
+	 	width: em(180);
+
+	 	.sub-menu {
+		 	display: none;
+	 	}
+	 	
+	 	> li {
+			display: block;
+			font-size: em($menu_size);
+			font-weight: 300;
+			position: relative;
+		 	text-transform: uppercase;
+
+		 	&.current-menu-ancestor,
+		 	&.current-menu-parent,
+		 	&.current-menu-item {
+			 	color: $baseColor;
+		 	}
+
+		 	&:before {
+		 		background-color: $extraLightGray;
+		 		content: '';
+		 		display: block;
+		 		height: em(2, $menu_size);
+		 		position: absolute;
+		 			top: 0;
+		 			left: 69px;
+		 		width: em(50, $menu_size);
+		 	}
+
+		 	&:first-child:before {
+		 		display: none;
+		 	}
+			
+			> a {
+				padding: em(14, $menu_size) em(20, $menu_size);
+				
+				&:hover {
+					color: $orange;
+				}
+			}
+		 	
+	 	}
+
+ 	}
+
+ 	.utility-menu {
+ 		font-size: em(14);
+ 		padding: em(20, 14);
+ 		text-align: center;
+ 		li {
+ 			margin-bottom: em(10, 14);
+ 		}
+
+ 		a {
+ 			color: $gray;
+ 		}
+ 	}
