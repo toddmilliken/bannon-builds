@@ -1,0 +1,594 @@
+//---
+// OVERRIDE PROJECT TYPOGRAPHY
+//---
+.gform_fields ,
+.gfield_radio ,
+.gfield_checkbox {
+	padding-left: 0;
+}		
+
+.gform_fields {
+	margin-bottom: 0;
+	
+	li {	
+		padding-top: 0;
+		
+		li:first-child {
+			padding-top: 0;
+		}
+		
+		&:before { 
+			display: none 
+		}
+	}	
+}	
+
+//---
+// GRAVITY FORMS - DEFAULTS
+//---	
+.gform_wrapper {
+	margin-bottom: em($gutter);
+}	
+	
+.gfield {
+	clear: both;
+	padding-bottom: em(15);
+}
+
+.gform_description {
+	display: block;
+	margin-bottom: em(30);
+}
+
+// .screen-reader-text is used on upload fields ("Accepted file types: jpg, gif...")
+.screen-reader-text {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 7px;
+}
+
+.instruction ,
+.gfield_description {
+	clear: both;
+	font-size: 85%;
+}
+
+.instruction {
+	font-style: italic;
+}
+
+.gfield_required {
+	color: $form-required;
+	margin-left: 3px;
+	position: relative;
+	top: -4px;
+}
+
+.validation_error,
+.validation_message,
+.gfield_error input {
+	border-color: $form-required;
+	color: $form-required;
+	font-weight: 600;
+}
+
+.validation_message {
+	margin-top: 5px;
+}
+
+.validation_error {
+	margin-bottom: 20px;
+}
+
+.gfield_error {
+
+	input ,
+	textarea ,
+	.selector 
+	select[multiple="multiple"] {
+		border-color: $form-required;
+		color: $form-required;
+		font-weight: 600;
+	}
+	
+}	
+
+
+	
+	
+		
+//---
+// GRAVITY FORMS - RADIO BUTTON / CHECK BOXES
+//---	
+.gfield_radio ,
+.gfield_checkbox {
+	padding-left: 0;
+	
+	label {
+		display: inline;
+		font-weight: 400;
+	}
+	
+}
+		
+//---
+// GRAVITY FORMS - COMPLEX FIELDS
+//---	
+.ginput_complex {
+	overflow: hidden;
+	
+	label {		
+		display: block;
+		font-size: em(85%);
+	}
+	
+	input {
+		width: 100%;
+	}
+	
+	.ginput_right,
+	.ginput_left {
+		float: left;
+		width: 49%;
+	}
+	
+	.ginput_right {
+		margin-left: 2%;
+	}
+	
+}
+
+
+	
+//---
+// GRAVITY FORMS - COMPLEX FIELDS (NAME FIELDS)
+//---
+.name_prefix ,
+.name_first ,
+.name_middle ,
+.name_last ,
+.name_suffix {
+	float: left;
+}	
+
+.gf_name_has_5 span {
+	margin-left: 1%;
+	width: 19.2%;
+}
+
+.gf_name_has_4 span {
+	margin-left: 2%;
+	width: 23.5%;
+}
+
+.gf_name_has_3 span {
+	margin-left: 2%;
+	width: 32%;
+}
+	
+.gf_name_has_2 span {
+	margin-left: 2%;
+	width: 49%;
+}
+
+.gf_name_has_5 span:first-child ,
+.gf_name_has_4 span:first-child ,
+.gf_name_has_3 span:first-child ,
+.gf_name_has_2 span:first-child {
+	margin-left: 0;
+}
+
+//---
+// HALF/THIRD READY CLASSES
+//---
+.gf_left_half ,
+.gf_right_half ,
+.gf_left_third ,
+.gf_middle_third ,
+.gf_right_third {
+	float: left;
+	clear: none;
+	
+	.small ,
+	.medium ,
+	.large {
+		width: 100% !important;
+	}
+	
+}
+
+// halfs
+.gf_left_half ,
+.gf_right_half {
+	width: 49%;
+}
+
+.gf_right_half {
+	margin-left: 2%;
+}
+
+// thirds
+.gf_left_third ,
+.gf_middle_third ,
+.gf_right_third {
+	width: 32%;
+}
+
+.gf_middle_third ,
+.gf_right_third {
+	margin-left: 2%;
+}
+
+//---
+// GRAVITY FORMS - DATE FIELDS AND TIME FIELDS
+//---
+.gfield_date_month ,
+.gfield_date_day ,
+.gfield_date_year ,
+.gfield_date_dropdown_month ,
+.gfield_date_dropdown_day ,
+.gfield_date_dropdown_year {
+	float: left;
+	margin-left: 2%;
+	width: em(100);
+	
+	input {
+		display: block;
+		width: 100%;
+	}
+	
+}
+
+.gfield_date_dropdown_month ,
+.gfield_date_month {
+	margin-left: 0;
+}
+
+// time
+.gfield_time_hour ,
+.gfield_time_minute ,
+.gfield_time_ampm {
+	float: left;
+	
+	input {
+		width: em(54);
+	}
+	
+	label	{
+		display: block;
+	}
+	
+}
+
+.gfield_time_minute	{
+	margin-left: em(4);
+}
+
+.gfield_time_ampm {
+	margin-left: em(12);
+	width: em(60);
+}
+
+
+//---
+// GRAVITY FORMS - FILE UPLOAD (MULTIPLE FILES)
+//---
+.gform_drop_area {
+	border: 2px dashed #ddd;
+	color: #aaa;
+	margin-bottom: 10px;
+	padding: em(25);
+	text-align: center;
+}
+
+//---
+// GRAVITY FORMS - DATE PICKER
+//---
+.datepicker {
+	max-width: em(140);
+}
+
+.ui-datepicker {
+	box-shadow: 0 0 3px 2px rgba(0,0,0,.2);
+	font-size: 9px;
+	
+	a {
+		text-decoration: none;
+		
+	}
+	
+}
+
+.ui-datepicker-header {
+	background-color: #fff; /* set the header background color */
+	color: #e0e0e0;
+	font-weight: bold;
+	-webkit-box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, .2);
+	-moz-box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, .2);
+	box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, .2);
+	line-height: 30px;
+	min-height: 30px !important;
+	border-width: 1px 0 0 0;
+	border-style: solid;
+	border-color: #666;
+}
+
+.ui-datepicker-title {
+	text-align: center;
+}
+
+.ui-datepicker-title select {
+	border: 1px solid #e0e0e0;
+	font-size: em(11, 9);
+	margin-left: 2px;
+	margin-right: 2px;
+	margin-top: 2.5%;
+}
+
+.ui-datepicker-prev, 
+.ui-datepicker-next {
+	display: inline-block;
+	height: 30px;
+	text-align: center;
+	cursor: pointer;
+	overflow: hidden;
+	width: 30px;
+}
+
+.ui-datepicker-prev {
+	float: left;
+	background-position: center -30px;
+}
+
+.ui-datepicker-next {
+	float: right;
+	background-position: center 0px;
+}
+
+.ui-datepicker thead {
+	background: #f7f7f7;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y3ZjdmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmMWYxZjEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  #f7f7f7 0%, #f1f1f1 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f7f7f7), color-stop(100%,#f1f1f1));
+	background: -webkit-linear-gradient(top,  #f7f7f7 0%,#f1f1f1 100%);
+	background: -o-linear-gradient(top,  #f7f7f7 0%,#f1f1f1 100%);
+	background: -ms-linear-gradient(top,  #f7f7f7 0%,#f1f1f1 100%);
+	background: linear-gradient(to bottom,  #f7f7f7 0%,#f1f1f1 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#f1f1f1',GradientType=0 );
+	border-bottom: 1px solid #bbb;
+}
+
+.ui-datepicker th {
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 6pt;
+	padding: 5px 0;
+	color: #fff;
+}
+
+.ui-datepicker tbody td {
+	padding: 0;
+	border-top: 1px solid #bbb;
+	border-right: 1px solid #bbb;
+}
+
+.ui-datepicker tbody td:last-child {
+	border-right: 0px;
+}
+
+.ui-datepicker tbody tr {
+	border-bottom: 1px solid #bbb;
+}
+
+.ui-datepicker tbody tr:last-child {
+	border-bottom: 0px;
+}
+
+.ui-datepicker td span, 
+.ui-datepicker td a {
+	display: inline-block;
+	font-weight: bold;
+	text-align: center;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	color: #666666;
+	
+	filter: dropshadow(color=#fff, offx=1, offy=1);
+}
+
+.ui-datepicker-calendar .ui-state-default {
+	background: #ededed;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VkZWRlZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkZWRlZGUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  #ededed 0%, #dedede 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ededed), color-stop(100%,#dedede));
+	background: -webkit-linear-gradient(top,  #ededed 0%,#dedede 100%);
+	background: -o-linear-gradient(top,  #ededed 0%,#dedede 100%);
+	background: -ms-linear-gradient(top,  #ededed 0%,#dedede 100%);
+	background: linear-gradient(to bottom,  #ededed 0%,#dedede 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#dedede',GradientType=0 );
+	-webkit-box-shadow: inset 1px 1px 0px 0px rgba(250, 250, 250, .5);
+	-moz-box-shadow: inset 1px 1px 0px 0px rgba(250, 250, 250, .5);
+	box-shadow: inset 1px 1px 0px 0px rgba(250, 250, 250, .5);
+}
+
+.ui-datepicker-calendar .ui-state-hover {
+	background: #f7f7f7;
+}
+
+.ui-datepicker-calendar .ui-state-active {
+	background: #FFF2AA; /* set the active date background color */
+	border: 1px solid #c19163; /* set the active date border color */
+	color: #666; /* set the active date font color */
+	-webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+	-moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+	box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+	
+	
+	position: relative;
+	margin: -1px;
+}
+
+.ui-datepicker-unselectable .ui-state-default {
+	background: #f4f4f4;
+	color: #b4b3b3;
+}
+
+.ui-datepicker-calendar td:first-child .ui-state-active {
+	width: 29px;
+	margin-left: 0;
+}
+
+.ui-datepicker-calendar td:last-child .ui-state-active {
+	width: 29px;
+	margin-right: 0;
+}
+
+.ui-datepicker-calendar tr:last-child .ui-state-active {
+	height: 29px;
+	margin-bottom: 0;
+}
+
+td.ui-datepicker-unselectable.ui-state-disabled {
+	background-color: #d7d7d7;
+}
+
+table.ui-datepicker-calendar {
+	margin: 0 0 0 0 !important;
+}
+
+body div#ui-datepicker-div[style] {
+	z-index: 9999 !important;
+}
+
+//---
+// GRAVITY FORMS - PROGRESS BAR
+//---		
+.gf_progressbar {
+	border-radius: 3px;
+	background: $silver;
+	padding: em(5);
+}
+
+.gf_progressbar_percentage {
+	border-radius: 3px;	
+	background: $primary-color;
+	color: #fff;
+	font-weight: 600;
+	padding: 0 5px;
+	text-align: center;
+}
+		
+
+//---
+// GRAVITY FORMS - LEFT ALIGNED LABELS
+//---	
+
+
+//---
+// GRAVITY FORMS - TOP ALIGNED LABELS
+//---	
+
+//---
+// GRAVITY FORMS - DESCRIPTION BELOW
+//---
+.field_description_below {
+	
+	.gfield_description {
+		margin-top: em(4);
+	}
+	
+}
+
+//---
+// GRAVITY FORMS - SIZES
+//--- 
+.gfield {
+	
+	.small {
+		width: 25%;
+	}
+	
+	.medium {
+		width: 45.5%;
+	}
+	
+	.large {
+		width: 100%;
+	}
+	
+}
+
+
+
+//---
+// GRAVITY FORMS WIDGET
+//---	
+	
+.gform_widget {
+	
+	.top_label input ,
+	.uploader {
+		width: 100%;
+	}
+	
+	.uploader span.action {
+		position: absolute;
+			right: 0;
+			top: 0;
+	}
+	
+}
+
+
+//---
+// MEDIA QUERIES
+//---	
+ 
+@include smartphone-landscape-down {
+	
+	.ginput_complex {
+		
+		> span {
+			width: 100%;
+		}
+		
+		.name_first ,
+		.name_last ,
+		.ginput_left,
+		.ginput_right {
+			width: 100%;
+		}
+		
+		.ginput_right {
+			margin-left: 0;
+		}
+		
+	}
+	
+	.gf_left_half,
+	.gf_right_half {
+		width: 100%;
+		
+		input {
+			width: 100%;
+		}
+	}
+	
+	.gfield {
+		
+		input,
+		.selector {
+			width: 100%;
+		}
+	}
+	
+	.gform_wrapper {
+		.medium ,
+		.large {
+			width: 100% !important;
+		}
+	}
+	
+}

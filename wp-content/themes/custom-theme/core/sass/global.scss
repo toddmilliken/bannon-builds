@@ -1,376 +1,50 @@
-@import "base";
-@import "typography";
+@import 'compass';
 
-/*---------------------------------------------------------
- * !HELPERS
- *---------------------------------------------------------*/ 
+//---
+// Config
+//---
+@import 'config/variables';
+@import 'config/mixins';
 
-	.clearfix:after {
-		visibility: hidden;
-		display: block;
-		font-size: 0;
-		content: " ";
-		clear: both;
-		height: 0;
-	}
-	
-	.inner {
-		margin: 0 auto;
-		width: em($widthCenter);
-		position: relative;
-		
-		@include inner-change-down {
-			padding: 0 em(20);
-			width: 100%;
-		}
-	}
+//---
+// Fonts
+//---
+@import 'fonts/akzidenz-grotesk';
 
-	.aligncenter {
-		display: table;
-		margin: 0 auto em($gutter);
-	}
-	
-	.alignleft,
-	.alignright {
-		position: relative;
-			top: 5px;
-		margin-bottom: em($gutter);
-	}
-	
-	
-	.alignleft {
-		float: left;
-		margin-right: em($gutter);
-	}
-	
-	.alignright {
-		float: right;
-		margin-left: 25px;
-	}
+//---
+// Theme Base - elements, typography
+//---
+@import 'base/normalize';
+@import 'base/base';
+@import 'base/typography';
+@import 'base/helpers';
 
-	@include smartphone-landscape-down {
-		.aligncenter ,
-		.alignleft ,
-		.alignright {
-			display: block;
-			float: none;
-			margin-left: 0;
-			margin-right: 0;
-		}
-	}
-	
-	.no-border,
-	.no-border img {
-		border: none !important;
-			-webkit-box-shadow: none;
-		box-shadow: none;
-	}
-	
-	.no-list-style,
-	.no-list-style li {
-		list-style: none !important;
-		padding-left: 0 !important;
-		
-		&:before {
-			display: none !important;
-		}
-	}
-	
-	.force-inline {
-		display: inline !important;
-	}
-	
-	.force-inline-block {
-		display: inline-block !important;
-	}
-	
-	.more {
-		@include heading(700);
-		@include transition-duration(500ms);
-		@include transition-property(color);
-		font-size: 14px;
-		margin-left: 3px;
- 		position: relative;
-		text-transform: uppercase;
-		
-	 	&:hover {
-			color: $baseColor;
-		}
-	 	
-	 	&:after {
-		 	content: '\203A';
-		 	line-height: 1;
-		 	position: absolute;
-		 		top: 1px;
-		 		right: -9px;
-	 	}
- 	}
-	
-	.btn {
-		@include heading(700);
-		@include transition-property(all);
-		@include transition-duration(500ms);
-		border: 3px solid $baseColor;
-		border-radius: em(40);
-		display: inline-block;
-		font-size: 1rem;
-		padding: em(12) em(24);
-		text-align: center;
-		text-transform: uppercase;
-		white-space: nowrap;
+//---
+// Re-usable Components
+//---
+@import 'components/forms';
 
-		&:hover {
-			background: darken($baseColor, 25%);
-			color: #fff;
-		}
-	}
-	
-/*---------------------------------------------------------
- * !SPRITES
- *---------------------------------------------------------*/
- 	
- 	/*
-	@import "icons/*.png";
- 	@include all-icons-sprites;	
- 	*/
+//---
+// Page Layout Parts
+//---
+@import 'layout/footer';
+@import 'layout/header';
+@import 'layout/masthead';
+@import 'layout/sidebar';
 
-/*---------------------------------------------------------
- * !HEADER
- *---------------------------------------------------------*/
+//---
+// Page Templates
+//---
+@import 'templates/front-page';
+@import 'templates/default';
+@import 'templates/single-project';
+@import 'templates/tmpl-projects'; 
+@import 'templates/tmpl-layers'; 
 
- 	body {
- 		overflow-x: hidden;
- 	}
- 
-	
-	
-	nav {
-			 	
-	 	a {
-		 	color: inherit;
-		 	display: block;
-		 	
-		 	&:hover {
-			 	color: $baseColor;
-		 	}
-		 	
-	 	}
-	 	
- 	}
-	
-/*---------------------------------------------------------
- * !BLOCKQUOTES
- *---------------------------------------------------------*/
-		
-	blockquote {
-		width: 100%;
-	}
-	
-	blockquote.alignleft,
-	blockquote.alignright {
-		width: 165px;
-	}
-	
-		blockquote h5 {
-			display: inline;
-			position: relative;
-		}
-		
-		blockquote h5:before {
-			content: '\201C';
-			position: absolute;
-				top: 0;
-				left: 0;
-		}
-		
-		blockquote h5:after {
-			content: '\201D';
-			position: relative;
-				left: 5px;
-		}
-		
-		blockquote p {
-			padding-top: 20px;
-			text-transform: uppercase;	
-		}
-			
-/*---------------------------------------------------------
- * !INNER IMAGE SHADOW
- *---------------------------------------------------------*/
-			
-	.img-shadow {
-		border: solid 2px #f6f9fa;
-		border-radius: 2px;
-		display: inline-block;
-		position: relative;
-	}
-	
-	.img-shadow:before {
-			-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-		box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
-		content: '';
-		position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-	}
-
-/*---------------------------------------------------------
- * !MULTI COLUMN LIST
- *---------------------------------------------------------*/
- 
- 	[class^="listContainer"] {
-	 	clear: both;
-	 	overflow: hidden;
- 	}
- 		 		
- 		.two-column {
-	 		float: left;
-	 		width: 50%;
- 		}
- 		
- 		.three-column {
-	 		float: left;
-	 		width: 33.3333333333333%
- 		}
-			
-/*---------------------------------------------------------
- * !ACCORDIONS
- *---------------------------------------------------------*/
-
- 	.accordion {
-	 	background: #fff;
-	 	border: solid 1px #000;
-	 	margin-top: 10px; 
-	 	padding: 5px 10px 3px 10px;
- 	}
-	 
- 	.accordion:first-child {
-		margin-top: 0; 	
- 	}
- 	
- 		.accordion-label {
-	 		color: #000;
-	 		display: block;
-	 		position: relative;
-	 		text-decoration: none;
- 		}
- 		
- 		.accordion-label:after {
-	 		content: '+';
-	 		position: absolute;
-	 			right: 0;
- 		}
- 		
- 		.accordion-label.open:after {
-	 		content: '-';
- 		}
- 		
- 		.accordion-content {
-	 		padding-top: 20px;
-	 		position: relative;
- 		}
-
-/*---------------------------------------------------------
- * !COLORBOX
- *---------------------------------------------------------*/
- 
- 	#cboxOverlay {
-	 	background: #333;
-	 	height: 100%;
-	 	position: fixed;
-	 		top: 0;
-	 		left: 0;
-	 		z-index: 9999;
-	 	width: 100%;
- 	}
- 	
- 	#colorbox {
- 		overflow: visible !important;
- 		position: absolute;
- 			top: 0;
- 			left: 0;
- 			z-index: 9999;
- 	}
- 	
- 		#cboxContent {
-	 		background: #fff;
-	 			-webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .7);
-	 		box-shadow: 0 0 10px rgba(0, 0, 0, .7);
-	 		position: relative;
- 		}
- 		
- 			#cboxLoadedContent {
- 				background: #fff;
-	 				-moz-box-sizing: content-box;
-	 				-webkit-box-sizing: content-box; 
-				box-sizing: content-box; 
-	 			padding: 10px;
-	 			position: relative;
-	 				z-index: 10;
- 			}
- 			
- 			.cs-colorbox #cboxLoadedContent {
-	 			padding-bottom: 50px;
- 			}
- 			
- 				.cboxIframe {
-	 				height: 100%;
-		 			width: 100%;
-	 			}
- 		
- 			#cboxClose {
- 				background: url(data:image/png;base64,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) no-repeat;
- 				color: #999;
- 				cursor: pointer;
- 				height: 30px;
- 				padding: 0 10px;
-	 			position: absolute;
-	 				top: -15px;
-	 				right: -15px;
-	 				z-index: 9999;
-	 			width: 30px;
- 			}
- 			
- 			#cboxClose:hover {
-	 			color: #5d123a;
- 			} 	
-
-/*---------------------------------------------------------
- * !FOOTER
- *---------------------------------------------------------*/ 
-
- 	.site-foot {
- 		padding: em(20) 0;
- 	}
-
- 	.footer-copy {
- 		font-size: em(14);
- 	}
-	
-	/*
-	.footer-menu {
-		a {
-			@include transition-property(border);
-			border-bottom: 1px solid transparent;
-			font-family: 'Open Sans Condensed';
-			font-weight: 700;
-			text-transform: uppercase;
-			
-			&:hover {
-				border-bottom: 1px solid $orange;
-				text-decoration: none;
-			}
-		}
-	}*/
-
-/*---------------------------------------------------------
- * !IMPORT OTHER STYLES
- *---------------------------------------------------------*/ 
- 	@import 'header';
- 	@import 'home';
- 	@import 'interior';
- 	@import 'sidebar';
- 	@import 'forms';
-
+//---
+// Plugin CSS
+//---
+@import 'plugins/colorbox';
+@import 'plugins/google-maps';
+@import 'plugins/gravity-forms';
+@import 'plugins/gravity-forms_readyclass';

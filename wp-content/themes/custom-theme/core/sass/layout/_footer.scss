@@ -1,0 +1,105 @@
+//---
+// Footer
+//---
+.site-foot {
+	@include background-image(linear-gradient(#eaeaea 10%,#fff));
+	padding: em(20) 0;
+	position: relative;
+	
+	
+ 	a {
+	 	color: $secondary-color;
+ 	}
+	
+	// gppgle maps
+	.acf-map {
+		border: #ccc solid 1px;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+	}
+	
+	// fixes potential theme css conflict 
+	.acf-map img {
+	   max-width: inherit !important;
+	}
+	
+}
+
+
+//---
+// Bottom Footer Menu
+//---
+.footer-links {
+	text-align: center;
+	
+	@include desktop-menu {
+		float: right;
+		text-align: left;		
+	}
+	
+}
+
+.footer-menu {
+
+	font-size: em(12);
+	padding-left: 0;
+	margin-bottom: 0;
+	text-align: center;
+	
+	li {
+		display: inline;
+		margin-left: em(8, 12);
+		padding-top: 0;
+		
+		&:first-child:before {
+			display: none;
+		}
+		
+		&:before {
+			color: #ccc;
+			content: '|';
+			display: inline;
+			font-size: inherit;
+			margin-right: em(8, 12);
+			position: static;
+		}
+		
+	}
+	
+	.sub-menu {
+		display: none;
+	}
+	
+	@include mobile-menu-down {
+		display: inline;
+	}
+	
+	@include desktop-menu {
+		float: left;
+		
+		li {
+			display: block;
+			float: left;
+		}
+	}
+	
+}
+
+//---
+// Footer Copyright
+//---
+.footer-copy {
+	font-size: em(12);
+	margin-bottom: em(12, 12);
+	text-align: center;
+	
+	@include desktop-menu {
+		float: left;
+		text-align: left;
+	}
+}

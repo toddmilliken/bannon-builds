@@ -1,19 +1,14 @@
-<?php get_header(); ?>
-<div class="main">
-	<?php Custom_Client::get_masthead(); ?>
-	<div class="inner">
-		<div class="page-title">
-			<?php Custom_Client::get_page_title(); ?>
-		</div>
-		<?php get_sidebar('right'); ?>
-		<div class="content">
-			<?php if ( have_posts() ) : 
-				while ( have_posts() ) : the_post(); 
-					the_content();	
-					if ( is_404() ) the_field( 'opts_404_text', 'options' );		
-				endwhile;
-			endif; ?>
-		</div>
-	</div>
-</div>
-<?php get_footer(); ?>
+<?php 
+get_header();
+get_template_part('partials/masthead');
+get_template_part('partials/wrapper', 'open');
+	if ( have_posts() ) :
+		while ( have_posts() ) : the_post(); 
+			the_content();
+		endwhile;
+	else : 
+		the_field('opts_404_text', 'options');
+	endif;		
+get_template_part('partials/wrapper', 'close');	
+get_footer(); 
+?>

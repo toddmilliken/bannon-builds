@@ -1,0 +1,349 @@
+//---
+// SITE HEADER CONTAINER
+//---
+.site-head {
+	@include transition(background-color 500ms ease 0s);
+	color: $white;
+	height: em($header-desktop);
+	position: fixed;
+		top: 0;
+		right: 0;
+		left: 0;
+		z-index: 200;
+		
+	.inner {
+		height: 100%;
+	}	
+	
+	a {
+		color: inherit;
+		
+		&:hover {
+			color: tint($primary-color, 20%);
+		}
+	}
+	
+	//! DARK HEADER ( GREEN BACKGROUND, WHITE TEXT )	
+	&--dark {
+		background-color: $primary-color;
+		color: $white;
+		
+		a:hover {
+			color: tint($white, 20%);
+		}
+	}
+	
+	//! PROJECT HEADER (SHOW GREEN ON HOVER)
+	&--show-on-hover {
+		.site-navigation {
+			opacity: 0;
+		}
+		
+		&:hover {
+			background-color: $primary-color;	
+			.site-navigation {
+				opacity: 1;
+			}	
+		}
+		
+	}
+	
+	&--dark ,
+	&--show-on-hover {
+		
+		.logo__sign {
+			background: rgba(48, 55, 23, 1);		
+		}
+		
+		.logo__text {
+			background: rgba(206, 150, 32, 1);
+		}
+		
+		.logo__custom:hover {
+			@include transform(none);
+			.logo__text {
+				background: tint($primary-color, 20%);
+			}
+		}
+		
+		.main-menu:after {
+			background: $secondary-color;
+		}
+		
+		.main-menu > li ,
+		.main-menu > li:first-child {
+			border-color: $secondary-color;
+		}
+		
+		.main-menu a:hover {
+			color: $secondary-color;
+		}
+		
+	}
+	
+}
+
+
+
+//---
+// SITE LOGO
+//---
+.logo {
+	@include transition(250ms ease 0ms);
+	@include transform-origin(0);
+	display: none;
+	position: absolute;
+		top: 0;	
+		left: 0;
+		z-index: 1;
+	width: em(240);
+	
+	&:hover {
+		//@include transform(scale(1.05));
+	}
+	
+	&__img {
+		height: auto;
+		width: em(240);
+	}
+	
+	///////////	
+	&__custom {
+		@include backface-visibility(hidden);
+		@include transition(250ms ease 0ms);
+		@include transform-origin(0);
+		height: em(71);
+		position: absolute;
+			top: 0;	
+			left: 0;
+			z-index: 1;
+		width: em(320);
+		&:hover {
+			//@include transform(scale(1.05));
+			
+			.logo__sign {
+				background: rgba(48, 55, 23, 1);		
+			}
+			
+			.logo__text {
+				background: rgba(206, 150, 32, 1);
+			}
+			
+		}
+	}
+	
+	&__sign {
+		@include transition(250ms ease 0s);
+		background: rgba(48, 55, 23, 0.8);
+		position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+		width: em(90);
+			
+		em {
+			background: url(../images/logo-sign_50.png) no-repeat 50% 50%;
+			color: $primary-color;
+			font-size: em(50);
+			position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+		}
+	}
+	
+	
+	$logo-text-size: 30;
+	&__text {
+		@include transition(250ms ease 0s);
+		background: rgba(206, 150, 32, 0.8);
+		font-family: $secondary-face;
+		position: absolute;
+			top: 0;
+			bottom: 0;
+			left: em(90);
+			right: 0;
+		
+		strong {
+			color: $white;
+			display: block;
+			font-size: em($logo-text-size);
+			line-height: 1;
+			padding-left: em(22, $logo-text-size);
+			padding-top: em(24, $logo-text-size);
+		}
+	}
+	
+}
+
+
+
+//---
+// MAIN MENU
+//---
+.site-navigation {
+	@include transition(500ms ease 0s);
+}
+
+
+$menu_size: 22; 	 	
+@include desktop-menu { 	
+		
+	.main-menu {
+		@include pie-clearfix;
+		float: right;
+		padding: 0;
+		margin: 0;
+		margin-top: em(34);
+		margin-right: em(30);
+		position: relative;
+		width: auto;
+		
+		//! EXTENDED LINE
+		&:after {
+			@include transition(500ms ease 0s);
+			background: $primary-color;
+			content: '';
+			display: block;
+			height: 1px;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: em(2000);
+		}
+
+		//! FIRST LEVEL
+		> li {
+			@include transition(500ms ease 0s);
+			border-right: 1px solid $primary-color;
+			float: left;
+			line-height: 1;
+			padding-top: 2px;
+			text-transform: lowercase;
+		
+			&:first-child {
+				border-left: 1px solid $primary-color;
+			}
+
+			&:before {
+				display: none;
+			}
+
+			> a {
+				color: inherit;
+				font-size: em($menu_size);
+				font-weight: 300;
+				line-height: 1;
+				padding: 0 em(26, $menu_size) em(6, $menu_size);
+				position: relative;
+					top: -2px;					
+			}
+			
+		} // END FIRST LEVEL 
+		
+		
+		// SECOND LEVEL
+		.sub-menu	{
+			display: none;
+		}
+
+	}
+		
+}
+
+
+
+//---
+// MOBILE MENU ICON
+//--- 
+.mob-menu {
+	@include backface-visibility(hidden);
+	@include transition(all 500ms ease 0s);
+	background: #fff;
+	border: 1px solid $secondary-color;
+	color: $secondary-color;
+	display: none; 
+	padding-top: em(6);
+	padding-bottom: em(4);
+	position: absolute;
+		top: em(10);
+		right: em(30);
+		z-index: 300;
+	text-align: center;
+	width: em(60);
+
+	span {
+		color: $secondary-color;
+		display: block;
+		font-size: em(12);
+		letter-spacing: 0.1em;
+		padding-top: em(4, 12);	
+		text-align: center;
+		text-transform: uppercase;
+	}
+		
+	> div {
+		background: $secondary-color;
+		display: inline-block;
+		height: em(4);
+		position: relative;
+		transition: .3s;
+		width: em(38);
+		
+		&:before,
+		&:after {
+			background: $secondary-color;
+			display: block;
+			content: '';
+			height: 4px;
+			position: absolute;
+				left: 0;
+				top: -8px;
+			transition: .3s;
+			-webkit-backface-visibility: hidden;
+			backface-visibility: hidden;
+			width: em(38);
+			
+		}
+		
+		&:after {
+			top: auto;
+			bottom: -8px;
+		}
+	}
+	
+	&.active {
+		@include transform(translateX(em(-170)));
+		
+		> div {
+			background: none;
+			
+			&:before,
+			&:after {
+				transform-origin: 50% 50%;
+				bottom: 0;
+				left: em(6);
+				top:0;
+				width: em(24);
+			}
+			
+			&:before {
+					-webkit-transform: rotate3d(0,0,1,45deg);
+					-moz-transform: rotate3d(0,0,1,45deg);
+					-o-transform: rotate3d(0,0,1,45deg);
+					-ms-transform: rotate3d(0,0,1,45deg);
+				transform: rotate3d(0,0,1,45deg);
+			}
+			
+			&:after {
+					-webkit-transform: rotate3d(0,0,1,-45deg);
+					-moz-transform: rotate3d(0,0,1,-45deg);
+					-o-transform: rotate3d(0,0,1,-45deg);
+					-ms-transform: rotate3d(0,0,1,-45deg);
+				transform: rotate3d(0,0,1,-45deg);
+			}
+		}
+	}
+
+}

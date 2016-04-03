@@ -1,4 +1,4 @@
- <?php
+<?php
 
 include_once('functions-client.php');
 include_once('functions-parts.php');
@@ -96,7 +96,8 @@ class Custom_Theme {
 		register_nav_menus(
 			array(
 				'main-menu' => __( 'Main Menu' ),
-				'utility-menu' => __( 'Utility Menu' )
+				'utility-menu' => __( 'Utility Menu' ),
+				'footer-menu' => __( 'Footer Links' ),
 			)
 		);
 	}
@@ -106,7 +107,7 @@ class Custom_Theme {
 	 *
 	 */
 	public static function custom_theme_widgets_init() {
-
+/*
 		register_sidebar(array(
 			'name'          => 'Sidebar',
 			'id'            => 'sidebar-right',
@@ -115,7 +116,7 @@ class Custom_Theme {
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>',
 		));
-
+*/
 	}
 
 	public static function enqueue_scripts() {
@@ -137,9 +138,9 @@ class Custom_Theme {
 	}
 
 	public static function enqueue_styles() {
-		wp_enqueue_style('fonts', 'https://fonts.googleapis.com/css?family=Lato:400,300,400italic,700,700italic,900', array(), null);
+		//wp_enqueue_style('fonts', 'https://fonts.googleapis.com/css?family=Lato:400,300,400italic,700,700italic,900', array(), null);
 		wp_enqueue_style('icons', '//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css', array(), null);
-		wp_enqueue_style('global', get_template_directory_uri() . '/core/css/global.css', array('fonts', 'icons'), null);
+		wp_enqueue_style('global', get_template_directory_uri() . '/core/css/global.css', array(), null);
 		wp_enqueue_style('owl-carousel', get_template_directory_uri() . '/core/css/owl.carousel.css', array('global'), null);
 	}
 
@@ -198,8 +199,7 @@ class Custom_Theme {
 	
 	public static function body_class( $classes )
 	{
-		$classes = array();
-
+		
 		foreach ( $classes as &$class )
 		{
 			$class = str_replace(array('-php', 'page-template-' , 'page-template' , '_templates'), '', $class);
@@ -209,7 +209,7 @@ class Custom_Theme {
 		{
 			$classes[] = 'interior';
 		} else {
-			$class[] = 'home';
+			$classes[] = 'home';
 		}
 		
 		if ( is_active_sidebar('callouts') )

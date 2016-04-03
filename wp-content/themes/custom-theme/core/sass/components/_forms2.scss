@@ -1,0 +1,76 @@
+
+/* Form Variables */
+$required: #ff0000;
+$inputBorder: 1px solid #ccc;
+$inputPadding: 10px;
+
+/*---------------------------------------------------------
+ * !DEFAULTS
+ *---------------------------------------------------------*/
+ 	
+ 	::-webkit-input-placeholder {
+ 		@include opacity(1);
+ 		color: inherit;
+	}
+	
+	:-moz-placeholder {
+		@include opacity(1);
+ 		color: inherit;
+	}
+	
+	::-moz-placeholder {
+ 		@include opacity(1);
+ 		color: inherit;
+	}
+	
+	:-ms-input-placeholder {  
+ 		@include opacity(1);
+ 		color: inherit;
+	}
+ 	
+ 	label {
+	 	font-weight: 600;
+	 	vertical-align: middle;
+ 	}
+ 	
+ 	textarea {
+ 		overflow: auto;
+	 	vertical-align: top;
+	 	&[name="comment"] {
+	 		width: 100%;
+	 	}
+ 	}
+ 	
+ 	[type="phone"] ,
+	[type="search"] ,
+	[type="number"] ,
+	[type="email"] ,
+	[type="text"] ,
+ 	textarea {
+		border: $inputBorder;
+		padding: $inputPadding;
+		margin: 0;
+		vertical-align: middle;
+ 	}
+ 	
+ 	[type="file"] {
+	 	border: 0;
+	 	padding: 0;
+ 	}
+ 	
+ 	[type="submit"]{
+	 	cursor: pointer;
+	 	min-width: 0;
+ 	}
+ 	
+ 	[type="phone"] ,
+	[type="search"] ,
+	[type="number"] ,
+	[type="email"] ,
+	[type="text"] ,
+ 	select ,
+ 	textarea {
+	 	min-width: 220px;
+	 	max-width: 500px;
+	 	width: 100%;
+ 	}

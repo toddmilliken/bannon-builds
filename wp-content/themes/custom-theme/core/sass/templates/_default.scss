@@ -1,0 +1,16 @@
+.main {
+	padding: em(60) 0 em(80);
+}
+
+.listing-item {
+	margin-bottom: em(40);
+	
+	h4 a {
+		color: $secondary-color;
+	}
+	
+	p {
+		margin-bottom: em(14);
+	}
+	
+}

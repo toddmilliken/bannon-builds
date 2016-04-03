@@ -1,0 +1,195 @@
+//---
+// DEFAULT FORM ELEMENTS
+//---
+
+label {
+	color: $form-label-color;
+	font-size: em(14);
+	font-weight: 400;
+	margin-bottom: em(6, 14);
+	vertical-align: middle;
+}
+
+input ,
+select ,
+textarea {
+	background: $form-input-background;
+	color: $form-input-color;
+	font-size: em(14);
+}
+
+textarea {
+	overflow: auto;
+	vertical-align: top;
+}
+
+input ,
+textarea {
+	border: $form-input-border;
+	padding: $form-input-padding;
+	margin: 0;
+	vertical-align: middle;
+}
+
+[type="file"] {
+	border: 0;
+	padding: 0;
+}
+
+[type="button"] {
+	cursor: pointer;
+}
+
+[type="submit"]{
+	@extend %btn;
+	background: #fff;
+	border-color: $secondary-color;
+	color: $secondary-color;
+	cursor: pointer;
+	
+	&:hover {
+		background: $secondary-color;
+		color: #fff;
+	}
+}
+
+select {
+	border-radius: 0;
+	
+	&[multiple="multiple"] {	
+		border: $form-input-border;
+		padding: $form-input-padding;
+		margin: 0;
+	}
+	
+}
+
+//! IE FIX
+select::-ms-expand {
+	display: none;
+}
+
+//! NORMALIZE AND IE FIX
+[type="radio"] ,
+[type="checkbox"] {
+	border: #fff; // for ie. must match page background color
+	@include box-shadow(none);
+	padding: 0;
+	margin: 0;
+	width: 20px;
+}
+ 	
+ 	
+//---
+// SELECTOR - .selector wrapper added dynamically via javascript
+//---
+.selector {
+	background: $form-input-background;
+	border: $form-input-border;
+	overflow: hidden;
+	position: relative;
+	vertical-align: middle;
+	
+	&:before {
+		color: $form-placeholder-color;
+		content: '\f078';
+		font-family: $font-awesome;
+		font-size: 12px;
+		line-height: 1;
+		position: absolute;
+			right: 8px;
+			top: 15px;
+		z-index: 0;
+	}
+	
+	select {
+		-webkit-appearance: none;
+		background: none;
+		background-image: none;
+		border: none;
+		box-shadow: none;
+		padding: $form-input-padding;
+		padding-right: calc(30% + 20px);
+		position: relative;
+		width: 130%;
+	
+		&:focus {
+			border: none;
+			outline: none;
+		}
+		
+	}
+}
+
+
+//---
+// UNIFORM UPLOADER
+//---
+
+// wrapper via javascript
+.uploader {
+	background-image: none;
+	background: $form-input-background;
+	border: $form-input-border; 
+	display: -moz-inline-box;
+	cursor: pointer;
+	display: inline-block;
+	*display: inline;
+	height: 40px;
+	overflow: hidden; 
+	position: relative;
+	vertical-align: middle;
+	width: 49%;
+	zoom: 1;
+	
+	// input (opacity: 0 to hide. should lay on top of the uniform fields)
+	input {
+		background: none;
+		border: none;
+		cursor: pointer;
+		height: 100%;
+		-moz-opacity: 0;
+		filter: alpha(opacity=0);
+		opacity: 0;
+		position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 2;
+		width: 100% !important; 
+	}
+	
+	.filename {
+		color: $form-input-color;
+		cursor: default;
+		display: block;
+		float: left;
+		font-size: em(14); 
+		height: 40px;
+		line-height: 1.25;
+		overflow: hidden;
+		padding: $form-input-padding;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		width: auto; 
+	}
+	
+	// upload button
+	.action {
+		@extend %btn;
+		border: none;
+		border-left: $form-input-border;
+		font-size: em(12);
+		line-height: 2;
+		position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+	}
+	
+	.action:hover {
+		background: #666; 
+	}
+	
+}

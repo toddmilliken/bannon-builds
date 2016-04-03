@@ -1,0 +1,155 @@
+.content {
+	margin: 0 auto;
+	max-width: 740px;
+}
+
+//---
+// Headings
+//---
+h1 {
+	font-weight: 400;
+	font-size: em($h1);
+	margin-bottom: em(24, 48);
+}
+
+h2 ,
+h3 ,
+h4 {
+
+}
+
+h2 {
+	color: $tertiary-color;
+	font-size: em($h2);
+	font-weight: 700;
+	line-height: ( 30 / $h2 );
+	margin-bottom: em(24, $h2);
+}
+
+h3 {
+	color: $secondary-color;
+	font-size: em($h3);
+	font-weight: 500;
+	line-height: ( 28 / $h3 );
+	margin-bottom: em(14, $h3);
+}
+
+h4 {
+	color: $secondary-color;
+	font-size: em($h4);
+	font-weight: 700;
+	line-height: ( 24 / $h4 );
+	margin-bottom: em(10, $h4);
+}
+
+h5 {
+	font-size: em($h5);
+	font-weight: 700;
+	margin-bottom: em(2, $h5);
+}
+
+h6 {
+	font-size: em($h6);
+	font-weight: 700;
+	margin-bottom: em(4, $h6);
+}
+
+//---
+// <a> tag
+//---
+a {
+	@include transition(color 500ms ease 0s);
+	color: $primary-color;
+	text-decoration: none;
+	
+	&:hover {
+		color: $secondary-color;
+	}
+
+}
+
+// PARAGRAPHS, UNORDERED, ORDERED LISTS
+//---
+p ,
+ul ,
+ol {
+	margin-bottom: em($gutter);
+}
+
+ul ,
+ol {
+	padding-left: em(24);
+	
+	ul ,
+	ol {
+		margin-bottom: 0; // nested uls, ols don't get margin-bottom
+	}
+	
+}
+
+ol {
+	list-style: none;
+}
+
+
+//---
+// LIST ITEMS
+//---
+li {
+	padding-top: em(10);
+	position: relative;
+	
+	&:first-child {
+		padding-top: 0;
+	}
+	
+	li:first-child {
+		padding-top: em(10); //! nested li:first-child tags get padding-top. 
+	}
+	
+	// <ul> specific
+	ul & {
+		&:first-child:before {
+			top: em(2, 26);
+		}
+		
+		ul li:first-child:before {
+			top: em(12, 26);
+		}
+	
+		&:before {
+			color: $primary-color;
+			content: '\2022';
+			font-size: em(26);
+			line-height: 1;
+			position: absolute;
+				left: em(-18, 26);
+				top: em(12, 26);
+		}
+	}
+	
+	// <ol> specific
+	ol & {
+		counter-increment: li-counter;
+		
+		&:first-child:before {
+			top: em(-1);
+		}
+		
+		ul li:first-child:before {
+			top: em(9);
+		}
+		
+		&:before {
+			color: $primary-color;
+			content: counter(li-counter) '.';
+			font-weight: 700;
+			position: absolute;
+				left: em(-22);
+				top: em(9);
+			text-align: right;
+		}
+		
+	}
+	
+}

@@ -6,63 +6,7 @@ add_action('login_head', array('Custom_Client','wp_login_client_logo'));
 
 class Custom_Client extends Custom_Theme
 {
-	/*-----------------------------------------------------------------------------------------------------------
-	 *
- 	 * Build and echo the masthead for the current page
- 	 *
- 	 * @params boolean $is_term
- 	 * If is a term, append the term slug + id to masthead to get the term's masthead.
- 	 *
- 	 * @echo variable $html
- 	 *
- 	 *-----------------------------------------------------------------------------------------------------------*/
 	
-	public static function get_masthead( $echo = true )
-	{
-		
-		global $post;
-
-		$id = $post->ID;
-		$masthead = get_field('int_masthead_image', $id);
-		
-
-		//! IF NO MASTHEAD, CHECK ANCESTORS
-		if ( !$masthead ) :
-			$ancestors = get_post_ancestors($post);
-			foreach ( $ancestors as $a ) :
-				if ( $has_masthead_image = get_field('int_masthead_image', $a) ) :
-					$masthead = $has_masthead_image;
-					break;
-				endif;
-			endforeach;
-		endif;
-		
-
-		//! IF STILL NO MASTHEAD, OR IS SEARCH, OR IS 404, GET MASTHEAD DEFAULT IN SITE OPTIONS
-		if ( !$masthead || is_search() || is_404() ) $masthead = get_field('opts_masthead', 'options');
-		
-
-		//! VERIFY THERE IS A MASTHEAD IMAGE AND BUILD HTML
-		if ( $masthead ) :
-			$blank_gif = get_template_directory_uri() . '/core/image/blank.gif';
-			$html = '
-				<section class="masthead picturefill-background">
-					<span data-src="' . $masthead['url'] . '" data-media="(min-width: 681px)"></span>
-					<span data-src="' . $blank_gif . '" data-media="(max-width: 680px)"></span>
-					<img src="' . $masthead['url'] . '" alt="' . $masthead['alt'] . '" class="masthead-img" />
-				</section>';
-			
-			if ( $echo ) :
-				echo $html;
-			else : 
-				return $html;
-			endif;
-
-		endif;
-
-	}
-
-
 	public static function get_page_title( $echo = true ) {
 
 		if ( in_the_loop() ) :
@@ -75,13 +19,12 @@ class Custom_Client extends Custom_Theme
 		$html = ( get_field('int_alt_title', $id) ? get_field('int_alt_title', $id) : get_the_title($id) );
 
 		if ( $echo ) :
-			echo '<h1>' . $html . '</h1>';
+			echo '<h1 class="page-title">' . $html . '</h1>';
 		else :
 			return $html;
 		endif;
 		
 	}
-
 	
 	public static function theme_search_settings($query) {
 	
@@ -99,11 +42,14 @@ class Custom_Client extends Custom_Theme
 	}
 
 	public static function wp_login_client_logo() {
+		
+		/*
 		if ( $logo = get_field('opts_logo', 'options') ) :
 			echo '
 				<style type="text/css">
 					h1 a { 
 						background-image: url('. $logo['url'] .') !important;
+						background-position: 50% 0 !important;
 						background-size: auto !important;
 						height: ' . $logo['height'] . 'px !important;
 						width: ' . $logo['width'] . 'px !important;
@@ -111,6 +57,7 @@ class Custom_Client extends Custom_Theme
 				</style>
 			';	
 		endif;
+		*/
 	}
 
 

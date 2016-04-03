@@ -48,26 +48,6 @@ class Custom_Parts extends Custom_Theme
 	}
 
 
-	function get_site_logo( $echo = true ) {
-
-		if ( $logo = get_field('opts_logo', 'option') ) :
-			
-			$html .= '
-				<a class="logo" href="' . home_url() . '">
-					<img src="' . $logo['url'] . '" alt="' . $logo['alt'] . '" />
-				</a>
-			';
-
-			if ( $echo ) :
-				echo $html;
-			else : 
-				return $html;
-			endif;
-
-		endif;
-	}
-
-
 	function get_associated_image( $args ) {
 
 	}

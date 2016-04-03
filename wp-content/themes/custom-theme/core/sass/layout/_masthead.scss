@@ -1,0 +1,68 @@
+.masthead {
+	background-color: #333;
+	height: em(210);
+	padding-top: em($header-desktop);
+	position: relative;
+}
+
+.masthead-bg {
+	//@include transition(500ms ease 250ms);
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	opacity: 1;
+	position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		
+	&:after {
+		@include background-image(linear-gradient(to top right, transparent, rgba(0,0,0,0.8)));
+		content: '';
+		display: block;
+		position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+	}
+	
+	&.ready {
+		opacity: 1;
+	}
+	
+}
+
+.masthead-title {
+	color: #fff;
+	font-size: em(48);
+	font-weight: 300;
+	line-height: 1.1;
+}
+
+.masthead .tble {
+	width: 100%;
+}
+
+.masthead .tble-cell {
+	vertical-align: bottom;
+}
+
+.masthead-content {	
+	//background: rgba(0,0,0,0.2);
+	padding: em(20) 0;
+	position: relative;
+}
+
+@include smartphone-landscape-down {
+	
+	.masthead {
+		height: auto;
+	}
+	
+	.masthead-bg {
+		display:  none;
+	}
+	
+}

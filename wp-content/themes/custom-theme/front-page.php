@@ -1,5 +1,6 @@
-<?php get_header(); ?>
-	<?php get_template_part('partials/home', 'panels'); ?>
-	<?php get_template_part('partials/home', 'recent-work'); ?>
-	<?php get_template_part('partials/home', 'contact'); ?>
+<?php get_header(); 
+	$partial_dir = 'partials/front-page/';
+?>
+	<?php get_template_part($partial_dir . 'panels'); ?>
+	<?php get_template_part($partial_dir . 'about'); ?>
 <?php get_footer(); ?>

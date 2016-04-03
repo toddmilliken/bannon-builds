@@ -1,0 +1,64 @@
+//---
+// Base elements
+//---
+
+html {
+	@include box-sizing(border-box);
+}
+
+* ,
+*:before ,
+*:after {
+	@include box-sizing(inherit);
+	box-sizing: border-box;
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: $primary-face;
+	font-size: 1em;
+	font-weight: 300;
+	line-height: 1.8;
+}
+
+
+
+em {
+	font-style: italic;
+	font-weight: inherit;
+}
+
+img {
+	display: block;
+}
+
+strong {
+	font-style: inherit;
+	font-weight: 700;
+}
+
+sub ,
+sup {
+	font-size: 80%;
+	height: 0;
+	line-height: 1 !important;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	top: 0.5ex;
+}
+
+sup {
+	bottom: 0.7ex;
+}
+
+hr {
+	background: $gray;
+	border: none;
+	clear: both;
+	height: 1px;
+	margin: em($gutter) 0;
+}

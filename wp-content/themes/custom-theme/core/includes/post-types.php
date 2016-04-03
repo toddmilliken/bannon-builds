@@ -1,4 +1,4 @@
- <?php
+<?php
 
 /**
 	Each post type array should contain the following:
@@ -34,8 +34,9 @@ $post_types = array(
 		'description' => '',
 		'exclude_from_search' => true,
 		'hierarchical' => true,
-		'supports' => array('title', 'page-attributes'),
+		'supports' => array('title', 'page-attributes', 'thumbnail'),
 		'menu_icon' => 'dashicons-admin-multisite',
+		'menu_position' => 20,
 	),
 );
 
