@@ -10,21 +10,12 @@
 <body <?php body_class(); ?>>
 	<header class="site-head">
 		<?php
-			//! SITE LOGO
-			if ( $logo = get_field('opts_logo', 'options') ) :
-				echo '
-					<a class="logo" href="' . home_url() . '">
-						<img class="logo__img" src="' . $logo['url'] . '" alt="' . $logo['alt'] . '" />
-					</a>
-				';
-			endif;
 			echo '
-				<a href="' . home_url() . '" class="logo__custom">
+				<a href="' . home_url() . '" class="logo">
 					<span class="logo__sign"><em></em></span>
 					<span class="logo__text"><strong>bannon</strong></span>
 				</a>
-			';
-			
+			';			
 		?>
 		<a href="javascript:;" class="mob-menu">
 			<div></div>
