@@ -16,17 +16,6 @@
 		right: 0;
 		bottom: 0;
 		left: 0;
-		
-	&:after {
-		@include background-image(linear-gradient(to top right, transparent, rgba(0,0,0,0.8)));
-		content: '';
-		display: block;
-		position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
-	}
 	
 	&.ready {
 		opacity: 1;
