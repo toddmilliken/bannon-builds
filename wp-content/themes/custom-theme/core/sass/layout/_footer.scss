@@ -75,7 +75,7 @@
 		display: none;
 	}
 	
-	@include mobile-menu-down {
+	@include mobile-menu {
 		display: inline;
 	}
 	

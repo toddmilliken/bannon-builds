@@ -243,21 +243,22 @@ $menu_size: 22;
 .mob-menu {
 	@include backface-visibility(hidden);
 	@include transition(all 500ms ease 0s);
-	background: #fff;
-	border: 1px solid $secondary-color;
+	background: rgba($primary-color, 0.7);
+	border: 1px solid $primary-color;
 	color: $secondary-color;
-	display: none; 
-	padding-top: em(6);
+	display: none;
+	height: em($header-desktop);
+	padding-top: em(12);
 	padding-bottom: em(4);
 	position: absolute;
-		top: em(10);
-		right: em(30);
+		top: 0;
+		right: 0;
 		z-index: 300;
 	text-align: center;
-	width: em(60);
+	width: em(80);
 
 	span {
-		color: $secondary-color;
+		color: $white;
 		display: block;
 		font-size: em(12);
 		letter-spacing: 0.1em;
@@ -267,7 +268,7 @@ $menu_size: 22;
 	}
 		
 	> div {
-		background: $secondary-color;
+		background: $white;
 		display: inline-block;
 		height: em(4);
 		position: relative;
@@ -276,7 +277,7 @@ $menu_size: 22;
 		
 		&:before,
 		&:after {
-			background: $secondary-color;
+			background: $white	;
 			display: block;
 			content: '';
 			height: 4px;
@@ -327,6 +328,10 @@ $menu_size: 22;
 				transform: rotate3d(0,0,1,-45deg);
 			}
 		}
+	}
+	
+	@include mobile-menu {
+		display: block;
 	}
 
 }

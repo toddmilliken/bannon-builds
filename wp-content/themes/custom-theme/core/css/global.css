@@ -783,7 +783,7 @@ select::-ms-expand {
 .footer-links {
   text-align: center;
 }
-@media (min-width: 50.0625em) {
+@media (min-width: 58.8125em) {
   /* line 37, ../sass/layout/_footer.scss */
   .footer-links {
     float: right;
@@ -821,13 +821,13 @@ select::-ms-expand {
 .footer-menu .sub-menu {
   display: none;
 }
-@media (max-width: 50em) {
+@media (max-width: 58.75em) {
   /* line 47, ../sass/layout/_footer.scss */
   .footer-menu {
     display: inline;
   }
 }
-@media (min-width: 50.0625em) {
+@media (min-width: 58.8125em) {
   /* line 47, ../sass/layout/_footer.scss */
   .footer-menu {
     float: left;
@@ -845,7 +845,7 @@ select::-ms-expand {
   margin-bottom: 1em;
   text-align: center;
 }
-@media (min-width: 50.0625em) {
+@media (min-width: 58.8125em) {
   /* line 96, ../sass/layout/_footer.scss */
   .footer-copy {
     float: left;
@@ -1025,7 +1025,7 @@ select::-ms-expand {
   transition: ease 500ms 0s;
 }
 
-@media (min-width: 50.0625em) {
+@media (min-width: 58.8125em) {
   /* line 176, ../sass/layout/_header.scss */
   .main-menu {
     *zoom: 1;
@@ -1105,22 +1105,23 @@ select::-ms-expand {
   -webkit-transition: all 500ms ease;
   -webkit-transition-delay: 0s;
   transition: all 500ms ease 0s;
-  background: #fff;
-  border: 1px solid #34460D;
+  background: rgba(229, 142, 26, 0.7);
+  border: 1px solid #E58E1A;
   color: #34460D;
   display: none;
-  padding-top: 0.375em;
+  height: 4.4375em;
+  padding-top: 0.75em;
   padding-bottom: 0.25em;
   position: absolute;
-  top: 0.625em;
-  right: 1.875em;
+  top: 0;
+  right: 0;
   z-index: 300;
   text-align: center;
-  width: 3.75em;
+  width: 5em;
 }
-/* line 259, ../sass/layout/_header.scss */
+/* line 260, ../sass/layout/_header.scss */
 .mob-menu span {
-  color: #34460D;
+  color: #fff;
   display: block;
   font-size: 0.75em;
   letter-spacing: 0.1em;
@@ -1128,18 +1129,18 @@ select::-ms-expand {
   text-align: center;
   text-transform: uppercase;
 }
-/* line 269, ../sass/layout/_header.scss */
+/* line 270, ../sass/layout/_header.scss */
 .mob-menu > div {
-  background: #34460D;
+  background: #fff;
   display: inline-block;
   height: 0.25em;
   position: relative;
   transition: .3s;
   width: 2.375em;
 }
-/* line 277, ../sass/layout/_header.scss */
+/* line 278, ../sass/layout/_header.scss */
 .mob-menu > div:before, .mob-menu > div:after {
-  background: #34460D;
+  background: #fff;
   display: block;
   content: '';
   height: 4px;
@@ -1151,23 +1152,23 @@ select::-ms-expand {
   backface-visibility: hidden;
   width: 2.375em;
 }
-/* line 293, ../sass/layout/_header.scss */
+/* line 294, ../sass/layout/_header.scss */
 .mob-menu > div:after {
   top: auto;
   bottom: -8px;
 }
-/* line 299, ../sass/layout/_header.scss */
+/* line 300, ../sass/layout/_header.scss */
 .mob-menu.active {
   -moz-transform: translateX(-10.625em);
   -ms-transform: translateX(-10.625em);
   -webkit-transform: translateX(-10.625em);
   transform: translateX(-10.625em);
 }
-/* line 302, ../sass/layout/_header.scss */
+/* line 303, ../sass/layout/_header.scss */
 .mob-menu.active > div {
   background: none;
 }
-/* line 305, ../sass/layout/_header.scss */
+/* line 306, ../sass/layout/_header.scss */
 .mob-menu.active > div:before, .mob-menu.active > div:after {
   transform-origin: 50% 50%;
   bottom: 0;
@@ -1175,7 +1176,7 @@ select::-ms-expand {
   top: 0;
   width: 1.5em;
 }
-/* line 314, ../sass/layout/_header.scss */
+/* line 315, ../sass/layout/_header.scss */
 .mob-menu.active > div:before {
   -webkit-transform: rotate3d(0, 0, 1, 45deg);
   -moz-transform: rotate3d(0, 0, 1, 45deg);
@@ -1183,13 +1184,19 @@ select::-ms-expand {
   -ms-transform: rotate3d(0, 0, 1, 45deg);
   transform: rotate3d(0, 0, 1, 45deg);
 }
-/* line 322, ../sass/layout/_header.scss */
+/* line 323, ../sass/layout/_header.scss */
 .mob-menu.active > div:after {
   -webkit-transform: rotate3d(0, 0, 1, -45deg);
   -moz-transform: rotate3d(0, 0, 1, -45deg);
   -o-transform: rotate3d(0, 0, 1, -45deg);
   -ms-transform: rotate3d(0, 0, 1, -45deg);
   transform: rotate3d(0, 0, 1, -45deg);
+}
+@media (max-width: 58.75em) {
+  /* line 243, ../sass/layout/_header.scss */
+  .mob-menu {
+    display: block;
+  }
 }
 
 /* line 1, ../sass/layout/_masthead.scss */
@@ -1498,7 +1505,7 @@ select::-ms-expand {
   margin-bottom: 1.66667em;
 }
 
-@media (min-width: 50.0625em) {
+@media (min-width: 58.8125em) {
   /* line 202, ../sass/templates/_front-page.scss */
   .h-left {
     float: left;

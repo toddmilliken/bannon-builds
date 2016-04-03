@@ -14,7 +14,7 @@ $browser-context: 16; // Default
 // Media Queries
 //---
 $inner-change-width: $width-center + 60;
-$mob-menu-width: 800;
+$mob-menu-width: 940;
 $tablet-width: 900;
 $smartphone-width: 640;
 $smartphone-landscape-width: 700;
@@ -32,7 +32,7 @@ $smartphone-portrait-width: 500;
 	}
 }
 
-@mixin mobile-menu-down {
+@mixin mobile-menu {
 	@media (max-width: #{ em($mob-menu-width) }) {
 		@content;
 	}
