@@ -19,7 +19,7 @@
 		color: inherit;
 		
 		&:hover {
-			color: tint($primary-color, 20%);
+			color: $primary-color;
 		}
 	}
 	
@@ -52,11 +52,11 @@
 	&--show-on-hover {
 		
 		.logo__sign {
-			background: rgba(48, 55, 23, 1);		
+			background: $secondary-color;
 		}
 		
 		.logo__text {
-			background: rgba(206, 150, 32, 1);
+			background: $primary-color;
 		}
 		
 		.logo__custom:hover {
@@ -89,60 +89,42 @@
 // SITE LOGO
 //---
 .logo {
+	@include backface-visibility(hidden);
 	@include transition(250ms ease 0ms);
 	@include transform-origin(0);
-	display: none;
+	height: em(71);
 	position: absolute;
 		top: 0;	
 		left: 0;
 		z-index: 1;
-	width: em(240);
+	width: em(320);
 	
+	//! HOVER STATE
 	&:hover {
 		//@include transform(scale(1.05));
-	}
-	
-	&__img {
-		height: auto;
-		width: em(240);
-	}
-	
-	///////////	
-	&__custom {
-		@include backface-visibility(hidden);
-		@include transition(250ms ease 0ms);
-		@include transform-origin(0);
-		height: em(71);
-		position: absolute;
-			top: 0;	
-			left: 0;
-			z-index: 1;
-		width: em(320);
-		&:hover {
-			//@include transform(scale(1.05));
-			
-			.logo__sign {
-				background: rgba(48, 55, 23, 1);		
-			}
-			
-			.logo__text {
-				background: rgba(206, 150, 32, 1);
-			}
-			
+		
+		.logo__sign {
+			background: $secondary-color;
 		}
+		
+		.logo__text {
+			background: $primary-color;
+		}
+		
 	}
 	
 	&__sign {
 		@include transition(250ms ease 0s);
-		background: rgba(48, 55, 23, 0.8);
+		background: rgba($secondary-color, 0.75);
 		position: absolute;
 			top: 0;
 			bottom: 0;
 			left: 0;
-		width: em(90);
+		width: em(96);
 			
 		em {
-			background: url(../images/logo-sign_50.png) no-repeat 50% 50%;
+			background: url(../images/logo-sign_50.svg) no-repeat 50% 50%;
+			background-size: 50px 51px;
 			color: $primary-color;
 			font-size: em(50);
 			position: absolute;
@@ -157,18 +139,19 @@
 	$logo-text-size: 30;
 	&__text {
 		@include transition(250ms ease 0s);
-		background: rgba(206, 150, 32, 0.8);
+		background: rgba($primary-color, 0.75);
 		font-family: $secondary-face;
 		position: absolute;
 			top: 0;
 			bottom: 0;
-			left: em(90);
+			left: em(96);
 			right: 0;
 		
 		strong {
 			color: $white;
 			display: block;
 			font-size: em($logo-text-size);
+			letter-spacing: 0.03em;
 			line-height: 1;
 			padding-left: em(22, $logo-text-size);
 			padding-top: em(24, $logo-text-size);
