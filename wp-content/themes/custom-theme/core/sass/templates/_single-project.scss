@@ -141,7 +141,7 @@
 		$owlNav: 30;
 		.owl-prev ,
 		.owl-next {
-		 	background: $orange;
+		 	background: $primary-color;
 		 	color: #fff;
 		 	display: block !important;
 		 	float: left;
@@ -153,7 +153,7 @@
 			width: em(40, $owlNav);
 			
 			&:hover {
-				background: tint($orange, 20%);
+				background: tint($primary-color, 20%);
 			}
 			
 			i {
