@@ -27,12 +27,14 @@ class Custom_Theme {
 	// ! @static array $dashboard_widgets_to_hide A list of dashboard widgets to hide
 	static $dashboard_widgets_to_hide = array(
 		'side' => array(
+		'dashboard_activity',
 		'dashboard_quick_press',
 		'dashboard_recent_drafts',
 		'dashboard_primary',
 		'dashboard_secondary',
 	),
 		'normal' => array(
+			'dashboard_activity',
 		'dashboard_incoming_links',
 		'dashboard_right_now',
 		'dashboard_plugins',
@@ -51,7 +53,12 @@ class Custom_Theme {
 
 		// Add featured image support
 		add_theme_support( 'post-thumbnails' ); 
-		add_image_size( 'mobile', 680 );
+
+		add_image_size( 'small', 380 );
+		add_image_size( 'mobile', 680 );		
+		add_image_size( 'tablet', 1024 );
+		add_image_size( 'desktop', 1800 );
+		
 
 		// Add HTML5 support for the search form.
 		add_theme_support( 'html5', array( 'search-form' ) );
@@ -81,6 +88,7 @@ class Custom_Theme {
 		/*	Admin hooks  */
 		if ( is_admin() ) {			
 			add_action('admin_menu', array(__CLASS__, 'hide_admin_menu_items'));
+			add_action('wp_dashboard_setup', array(__CLASS__, 'hide_dashboard_widgets'));
 			add_filter( 'tiny_mce_before_init', array(__CLASS__, 'my_mce_before_init_insert_formats') );
 			return;
 		}
