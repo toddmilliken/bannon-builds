@@ -1,6 +1,6 @@
 <?php
 
-// add_action('login_head', array('Custom_Client','wp_login_client_logo'));
+add_action('login_head', array('Custom_Client','wp_login_client_logo'));
 add_action('pre_get_posts', array('Custom_Client', 'theme_search_settings'));
 add_action('login_head', array('Custom_Client','wp_login_client_logo'));
 
@@ -43,21 +43,44 @@ class Custom_Client extends Custom_Theme
 
 	public static function wp_login_client_logo() {
 		
-		/*
+		
 		if ( $logo = get_field('opts_logo', 'options') ) :
+
+			$logo_url = $logo['url'];
+			$logo_height = $logo['height'];
+			$logo_width = $logo['width'];
+		
 			echo '
 				<style type="text/css">
-					h1 a { 
-						background-image: url('. $logo['url'] .') !important;
-						background-position: 50% 0 !important;
+					
+					#login h1 {					
+						height: ' . $logo_height . 'px !important;
+						width: ' . $logo_width . 'px !important;
+						position: relative;
+							left: 50%;
+						-o-transform: translate(-50%, 0);
+						-ms-transform: translate(-50%, 0);
+						-moz-transform: translate(-50%, 0);
+						-webkit-transform: translate(-50%, 0);
+						transform: translate(-50%, 0);					
+					}			
+				
+					#login h1 a { 
+						background-image: url('. $logo_url .') !important;
 						background-size: auto !important;
-						height: ' . $logo['height'] . 'px !important;
-						width: ' . $logo['width'] . 'px !important;
+						height: ' . $logo_height . 'px !important;
+						width: ' . $logo_width . 'px !important;
 					}
+					
+					#login h1 + div ,
+					#login h1 + p {
+						margin-top: 20px;
+					}
+					
 				</style>
 			';	
 		endif;
-		*/
+		
 	}
 
 
