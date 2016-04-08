@@ -48,6 +48,15 @@
 	
 	.masthead {
 		height: auto;
+		
+		&-title {
+			margin-bottom: 0; 
+		}
+		
+		&-content {
+			padding: em(30) 0;
+		}
+		
 	}
 	
 	.masthead-bg {
