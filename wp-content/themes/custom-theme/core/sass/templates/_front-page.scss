@@ -123,12 +123,14 @@
 	background-size: cover;
 	//top: em(90);
 
+/*
 	.mod-js & {
 		opacity: 0;
 		&.fadeIn {
 			opacity: 1;
 		}
 	}
+*/
 }
 
 .hp-content {
@@ -228,6 +230,6 @@ $headlineSize: 36;
 		min-height: 100%;
 		height: auto;
 		min-width: 100%;
-		width: auto;
+		width: auto !important;
 	}
 }
