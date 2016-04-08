@@ -116,7 +116,7 @@
 		
 		//! fadeIn background
 		$(window).load(function(){
-			$('.panel-bg').addClass('fadeIn');
+			//$('.panel-bg').addClass('fadeIn');
 		});
         
 		//! HOME PANELS SLIDER
@@ -165,7 +165,7 @@
             $this = $(this);
 			$this.toggleClass('active');
 			$('.site-wrap').toggleClass('pushed');
-			$('.site-navigation').toggleClass('pushed');
+			$('.site-navigation').toggleClass('site-navigation--active');
 			
             if ( $this.hasClass('active') ) {
                 $this.find('span').text('Close');
