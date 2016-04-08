@@ -26,6 +26,19 @@
 			<?php
 				//! MAIN MENU 
 				wp_nav_menu('container=&container_class=&menu_class=main-menu clearfix&theme_location=main-menu&fallback_cb=false');
+				
+				//! MOBILE FOOTER MENU 
+				if ( has_nav_menu('footer-menu') ) :
+					wp_nav_menu(array(
+						'container' => '',
+						'container_class' => '',
+						'theme_location'  => 'footer-menu',
+						'menu'            => '',
+						'items_wrap' 	  	=> '<ul class="%2$s">%3$s</ul>',
+						'menu_class'      => 'footer-menu',
+					));
+				endif;
+				
 			?>				
 		</nav>
 	</header>
