@@ -397,7 +397,8 @@ $menu_size: 22;
 	}
 	
 	&.active {
-		@include transform(translateX(em(-200)));
+		@include transform(translateX(em(-190)));
+		background: $primary-color;
 		
 		> div {
 			background: none;

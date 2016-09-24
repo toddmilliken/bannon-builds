@@ -94,8 +94,9 @@
 	
 }	
 
-
-	
+.gform_button {
+	margin-top: 30px;
+}
 	
 		
 //---
@@ -120,7 +121,9 @@
 	
 	label {		
 		display: block;
-		font-size: em(85%);
+		font-size: 85%;
+		font-weight: 400;
+		margin-bottom: 0;
 	}
 	
 	input {
@@ -547,6 +550,21 @@ body div#ui-datepicker-div[style] {
 //---	
  
 @include smartphone-landscape-down {
+	
+	.name_prefix ,
+	.name_first ,
+	.name_middle ,
+	.name_last ,
+	.name_suffix ,
+	.gf_name_has_5 span ,
+	.gf_name_has_4 span ,
+	.gf_name_has_3 span ,
+	.gf_name_has_2 span ,
+	.gf_right_half ,
+	.gf_middle_third ,
+	.gf_right_third {
+		margin-left: 0;
+	}	
 	
 	.ginput_complex {
 		

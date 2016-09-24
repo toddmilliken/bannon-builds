@@ -147,25 +147,31 @@ body {
   font-weight: 300;
   line-height: 1.8;
 }
+@media (max-width: 43.75em) {
+  /* line 16, ../sass/base/_base.scss */
+  body {
+    line-height: 1.4;
+  }
+}
 
-/* line 27, ../sass/base/_base.scss */
+/* line 32, ../sass/base/_base.scss */
 em {
   font-style: italic;
   font-weight: inherit;
 }
 
-/* line 32, ../sass/base/_base.scss */
+/* line 37, ../sass/base/_base.scss */
 img {
   display: block;
 }
 
-/* line 36, ../sass/base/_base.scss */
+/* line 41, ../sass/base/_base.scss */
 strong {
   font-style: inherit;
   font-weight: 700;
 }
 
-/* line 41, ../sass/base/_base.scss */
+/* line 46, ../sass/base/_base.scss */
 sub,
 sup {
   font-size: 80%;
@@ -175,17 +181,17 @@ sup {
   vertical-align: baseline;
 }
 
-/* line 50, ../sass/base/_base.scss */
+/* line 55, ../sass/base/_base.scss */
 sub {
   top: 0.5ex;
 }
 
-/* line 54, ../sass/base/_base.scss */
+/* line 59, ../sass/base/_base.scss */
 sup {
   bottom: 0.7ex;
 }
 
-/* line 58, ../sass/base/_base.scss */
+/* line 63, ../sass/base/_base.scss */
 hr {
   background: #666;
   border: none;
@@ -212,7 +218,7 @@ h2 {
   color: #b2b994;
   font-size: 2.5em;
   font-weight: 700;
-  line-height: 0.75;
+  line-height: 1.1;
   margin-bottom: 0.6em;
 }
 
@@ -236,19 +242,21 @@ h4 {
 
 /* line 45, ../sass/base/_typography.scss */
 h5 {
+  color: #34460D;
   font-size: 1em;
   font-weight: 700;
   margin-bottom: 0.125em;
 }
 
-/* line 51, ../sass/base/_typography.scss */
+/* line 52, ../sass/base/_typography.scss */
 h6 {
+  color: #34460D;
   font-size: 0.875em;
   font-weight: 700;
   margin-bottom: 0.28571em;
 }
 
-/* line 60, ../sass/base/_typography.scss */
+/* line 62, ../sass/base/_typography.scss */
 a {
   -moz-transition: color 500ms ease 0s;
   -o-transition: color 500ms ease 0s;
@@ -258,24 +266,24 @@ a {
   color: #E58E1A;
   text-decoration: none;
 }
-/* line 65, ../sass/base/_typography.scss */
+/* line 67, ../sass/base/_typography.scss */
 a:hover {
   color: #34460D;
 }
 
-/* line 73, ../sass/base/_typography.scss */
+/* line 75, ../sass/base/_typography.scss */
 p,
 ul,
 ol {
   margin-bottom: 1.875em;
 }
 
-/* line 79, ../sass/base/_typography.scss */
+/* line 81, ../sass/base/_typography.scss */
 ul,
 ol {
   padding-left: 1.5em;
 }
-/* line 83, ../sass/base/_typography.scss */
+/* line 85, ../sass/base/_typography.scss */
 ul ul,
 ul ol,
 ol ul,
@@ -283,33 +291,33 @@ ol ol {
   margin-bottom: 0;
 }
 
-/* line 90, ../sass/base/_typography.scss */
+/* line 92, ../sass/base/_typography.scss */
 ol {
   list-style: none;
 }
 
-/* line 98, ../sass/base/_typography.scss */
+/* line 100, ../sass/base/_typography.scss */
 li {
   padding-top: 0.625em;
   position: relative;
 }
-/* line 102, ../sass/base/_typography.scss */
+/* line 104, ../sass/base/_typography.scss */
 li:first-child {
   padding-top: 0;
 }
-/* line 106, ../sass/base/_typography.scss */
+/* line 108, ../sass/base/_typography.scss */
 li li:first-child {
   padding-top: 0.625em;
 }
-/* line 112, ../sass/base/_typography.scss */
+/* line 114, ../sass/base/_typography.scss */
 ul li:first-child:before {
   top: 0.07692em;
 }
-/* line 116, ../sass/base/_typography.scss */
+/* line 118, ../sass/base/_typography.scss */
 ul li ul li:first-child:before {
   top: 0.46154em;
 }
-/* line 120, ../sass/base/_typography.scss */
+/* line 122, ../sass/base/_typography.scss */
 ul li:before {
   color: #E58E1A;
   content: '\2022';
@@ -319,19 +327,19 @@ ul li:before {
   left: -0.69231em;
   top: 0.46154em;
 }
-/* line 132, ../sass/base/_typography.scss */
+/* line 134, ../sass/base/_typography.scss */
 ol li {
   counter-increment: li-counter;
 }
-/* line 135, ../sass/base/_typography.scss */
+/* line 137, ../sass/base/_typography.scss */
 ol li:first-child:before {
   top: -0.0625em;
 }
-/* line 139, ../sass/base/_typography.scss */
+/* line 141, ../sass/base/_typography.scss */
 ol li ul li:first-child:before {
   top: 0.5625em;
 }
-/* line 143, ../sass/base/_typography.scss */
+/* line 145, ../sass/base/_typography.scss */
 ol li:before {
   color: #E58E1A;
   content: counter(li-counter) ".";
@@ -1262,16 +1270,17 @@ select::-ms-expand {
 }
 /* line 399, ../sass/layout/_header.scss */
 .mob-menu.active {
-  -moz-transform: translateX(-12.5em);
-  -ms-transform: translateX(-12.5em);
-  -webkit-transform: translateX(-12.5em);
-  transform: translateX(-12.5em);
+  -moz-transform: translateX(-11.875em);
+  -ms-transform: translateX(-11.875em);
+  -webkit-transform: translateX(-11.875em);
+  transform: translateX(-11.875em);
+  background: #E58E1A;
 }
-/* line 402, ../sass/layout/_header.scss */
+/* line 403, ../sass/layout/_header.scss */
 .mob-menu.active > div {
   background: none;
 }
-/* line 405, ../sass/layout/_header.scss */
+/* line 406, ../sass/layout/_header.scss */
 .mob-menu.active > div:before, .mob-menu.active > div:after {
   transform-origin: 50% 50%;
   bottom: 0;
@@ -1279,7 +1288,7 @@ select::-ms-expand {
   top: 0;
   width: 1.5em;
 }
-/* line 414, ../sass/layout/_header.scss */
+/* line 415, ../sass/layout/_header.scss */
 .mob-menu.active > div:before {
   -webkit-transform: rotate3d(0, 0, 1, 45deg);
   -moz-transform: rotate3d(0, 0, 1, 45deg);
@@ -1287,7 +1296,7 @@ select::-ms-expand {
   -ms-transform: rotate3d(0, 0, 1, 45deg);
   transform: rotate3d(0, 0, 1, 45deg);
 }
-/* line 422, ../sass/layout/_header.scss */
+/* line 423, ../sass/layout/_header.scss */
 .mob-menu.active > div:after {
   -webkit-transform: rotate3d(0, 0, 1, -45deg);
   -moz-transform: rotate3d(0, 0, 1, -45deg);
@@ -1679,28 +1688,13 @@ select::-ms-expand {
   top: 0;
   bottom: 0;
 }
-/* line 15, ../sass/templates/_single-project.scss */
-.project-slide__image--full-screen {
-  left: 0;
-  right: 0;
-}
-/* line 20, ../sass/templates/_single-project.scss */
-.project-slide__image--left {
-  left: 0;
-  width: 50%;
-}
-/* line 25, ../sass/templates/_single-project.scss */
-.project-slide__image--right {
-  right: 0;
-  width: 50%;
-}
-/* line 32, ../sass/templates/_single-project.scss */
+/* line 17, ../sass/templates/_single-project.scss */
 .project-slide__content {
   position: absolute;
   top: 0;
   bottom: 0;
 }
-/* line 38, ../sass/templates/_single-project.scss */
+/* line 23, ../sass/templates/_single-project.scss */
 .project-slide__content--full-screen {
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjElIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAuMDEiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC43Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
   background-size: 100%;
@@ -1712,28 +1706,18 @@ select::-ms-expand {
   left: 0;
   right: 0;
 }
-/* line 44, ../sass/templates/_single-project.scss */
+/* line 29, ../sass/templates/_single-project.scss */
 .project-slide__content--full-screen .content-inner {
-  -moz-transform: translate(-50%, 0);
-  -ms-transform: translate(-50%, 0);
-  -webkit-transform: translate(-50%, 0);
-  transform: translate(-50%, 0);
   position: absolute;
   bottom: 3.125em;
-  left: 50%;
+  left: 3.125em;
   width: 73.125em;
 }
-/* line 55, ../sass/templates/_single-project.scss */
-.project-slide__content--left {
-  left: 0;
-  width: 50%;
+/* line 43, ../sass/templates/_single-project.scss */
+.project-slide__content--left .ps__title:before, .project-slide__content--right .ps__title:before {
+  background: #333;
 }
-/* line 61, ../sass/templates/_single-project.scss */
-.project-slide__content--right {
-  right: 0;
-  width: 50%;
-}
-/* line 68, ../sass/templates/_single-project.scss */
+/* line 47, ../sass/templates/_single-project.scss */
 .project-slide__content--left .content-inner, .project-slide__content--right .content-inner {
   padding: 2.5em 5em;
   position: absolute;
@@ -1742,7 +1726,7 @@ select::-ms-expand {
   right: 0;
 }
 
-/* line 84, ../sass/templates/_single-project.scss */
+/* line 63, ../sass/templates/_single-project.scss */
 .ps__title {
   font-variant: small-caps;
   font-size: 1em;
@@ -1753,7 +1737,7 @@ select::-ms-expand {
   padding-bottom: 0.75em;
   text-transform: uppercase;
 }
-/* line 95, ../sass/templates/_single-project.scss */
+/* line 74, ../sass/templates/_single-project.scss */
 .ps__title:before {
   background: #fff;
   content: '';
@@ -1765,37 +1749,37 @@ select::-ms-expand {
   width: 12px;
 }
 
-/* line 109, ../sass/templates/_single-project.scss */
+/* line 88, ../sass/templates/_single-project.scss */
 .ps__content {
   max-width: 36.5625em;
 }
-/* line 113, ../sass/templates/_single-project.scss */
+/* line 92, ../sass/templates/_single-project.scss */
 .ps__content p {
   font-size: 1.25em;
   line-height: 1.4;
   margin-bottom: 1em;
 }
-/* line 118, ../sass/templates/_single-project.scss */
+/* line 97, ../sass/templates/_single-project.scss */
 .ps__content p strong {
   letter-spacing: 0.03em;
   font-size: 1.1em;
 }
 
-/* line 128, ../sass/templates/_single-project.scss */
+/* line 107, ../sass/templates/_single-project.scss */
 .ps__cite {
   font-size: 0.8125em;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
 
-/* line 135, ../sass/templates/_single-project.scss */
+/* line 114, ../sass/templates/_single-project.scss */
 .project-slider .owl-nav {
   position: absolute;
   right: 0;
   bottom: 1.25em;
   z-index: 4;
 }
-/* line 142, ../sass/templates/_single-project.scss */
+/* line 121, ../sass/templates/_single-project.scss */
 .project-slider .owl-nav .owl-prev,
 .project-slider .owl-nav .owl-next {
   background: #E58E1A;
@@ -1809,21 +1793,127 @@ select::-ms-expand {
   text-align: center;
   width: 1.33333em;
 }
-/* line 155, ../sass/templates/_single-project.scss */
+/* line 134, ../sass/templates/_single-project.scss */
 .project-slider .owl-nav .owl-prev:hover,
 .project-slider .owl-nav .owl-next:hover {
   background: #eaa548;
 }
-/* line 159, ../sass/templates/_single-project.scss */
+/* line 138, ../sass/templates/_single-project.scss */
 .project-slider .owl-nav .owl-prev i,
 .project-slider .owl-nav .owl-next i {
   line-height: 1.33333em;
 }
-/* line 167, ../sass/templates/_single-project.scss */
+/* line 146, ../sass/templates/_single-project.scss */
 .project-slider .owl-item {
   z-index: 1;
 }
 
+@media screen and (max-width: 899px) {
+  /* line 155, ../sass/templates/_single-project.scss */
+  .project-slide__image {
+    left: 0;
+    right: 0;
+  }
+
+  /* line 169, ../sass/templates/_single-project.scss */
+  .ps__title {
+    margin-bottom: 0.55556em;
+  }
+
+  /* line 173, ../sass/templates/_single-project.scss */
+  .ps__content {
+    font-size: 0.875em;
+  }
+
+  /* line 177, ../sass/templates/_single-project.scss */
+  .project-slide__content {
+    padding-bottom: 2.1875em;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+  }
+
+  /* line 185, ../sass/templates/_single-project.scss */
+  .project-slide__content--left .content-inner, .project-slide__content--right .content-inner {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 0.625em;
+  }
+
+  /* line 190, ../sass/templates/_single-project.scss */
+  .project-slide__content--left .content-inner,
+  .project-slide__content--right .content-inner,
+  .project-slide__content--full-screen .content-inner {
+    left: 0.625em;
+    right: 0.625em;
+    width: auto;
+  }
+}
+@media screen and (max-width: 899px) and (min-width: 550px) {
+  /* line 200, ../sass/templates/_single-project.scss */
+  .project-slide__content--left .content-inner, .project-slide__content--right .content-inner {
+    padding: 1.25em;
+  }
+
+  /* line 204, ../sass/templates/_single-project.scss */
+  .project-slide__content--left .content-inner,
+  .project-slide__content--right .content-inner,
+  .project-slide__content--full-screen .content-inner {
+    left: 1.25em;
+    right: 1.25em;
+  }
+}
+@media screen and (min-width: 900px) {
+  /* line 222, ../sass/templates/_single-project.scss */
+  .project-slide__image--full-screen {
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjElIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAuMDEiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC43Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+    background-size: 100%;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(1%, rgba(0, 0, 0, 0.01)), color-stop(100%, rgba(0, 0, 0, 0.7)));
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.7) 100%);
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.7) 100%);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.7) 100%);
+    color: #fff;
+    left: 0;
+    right: 0;
+  }
+  /* line 228, ../sass/templates/_single-project.scss */
+  .project-slide__image--full-screen .content-inner {
+    -moz-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    position: absolute;
+    bottom: 3.125em;
+    left: 50%;
+    width: 73.125em;
+  }
+  /* line 238, ../sass/templates/_single-project.scss */
+  .project-slide__image--full-screen {
+    left: 0;
+    right: 0;
+  }
+  /* line 243, ../sass/templates/_single-project.scss */
+  .project-slide__image--left {
+    left: 0;
+    width: 50%;
+  }
+  /* line 249, ../sass/templates/_single-project.scss */
+  .project-slide__image--right {
+    right: 0;
+    width: 50%;
+  }
+
+  /* line 256, ../sass/templates/_single-project.scss */
+  .project-slide__content--right {
+    right: 0;
+    width: 50%;
+  }
+  /* line 260, ../sass/templates/_single-project.scss */
+  .project-slide__content--left {
+    left: 0;
+    width: 50%;
+  }
+}
 /* line 1, ../sass/templates/_tmpl-projects.scss */
 .main-projects {
   padding-top: 2.5em;
@@ -1944,47 +2034,169 @@ select::-ms-expand {
 }
 /* line 1, ../sass/templates/_tmpl-layers.scss */
 .layer {
-  display: table;
-  height: 27.5em;
   position: relative;
-  table-layout: fixed;
-  width: 100%;
 }
-/* line 8, ../sass/templates/_tmpl-layers.scss */
-.layer__content, .layer__image {
-  display: table-cell;
-  height: 100%;
-  position: relative;
-  vertical-align: middle;
-  width: 50%;
+/* line 4, ../sass/templates/_tmpl-layers.scss */
+.layer__image {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-/* line 17, ../sass/templates/_tmpl-layers.scss */
-.layer__content {
-  padding: 2.5em 5em;
-}
-/* line 21, ../sass/templates/_tmpl-layers.scss */
+/* line 10, ../sass/templates/_tmpl-layers.scss */
 .layer__title {
   color: #E58E1A;
   font-size: 2.25em;
 }
-/* line 27, ../sass/templates/_tmpl-layers.scss */
+/* line 16, ../sass/templates/_tmpl-layers.scss */
 .layer__p {
   color: #34460D;
   font-size: 1.25em;
 }
-/* line 32, ../sass/templates/_tmpl-layers.scss */
-.layer__image_bg {
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100%;
-  width: 100%;
+/* line 20, ../sass/templates/_tmpl-layers.scss */
+.layer__p:last-of-type {
+  margin-bottom: 0;
 }
-/* line 41, ../sass/templates/_tmpl-layers.scss */
+/* line 26, ../sass/templates/_tmpl-layers.scss */
 .layer:nth-child(even) .layer__title {
   color: #E58E1A;
 }
 
+@media screen and (max-width: 759px) {
+  /* line 37, ../sass/templates/_tmpl-layers.scss */
+  .layer__flex-parent {
+    -js-display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    width: 100%;
+  }
+  /* line 43, ../sass/templates/_tmpl-layers.scss */
+  .layer__flex-child {
+    -js-display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-height: 15.625em;
+    width: 100%;
+  }
+  /* line 51, ../sass/templates/_tmpl-layers.scss */
+  .layer__image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+  }
+  /* line 59, ../sass/templates/_tmpl-layers.scss */
+  .layer__image:after {
+    background: rgba(255, 255, 255, 0.85);
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+  }
+  /* line 71, ../sass/templates/_tmpl-layers.scss */
+  .layer__content {
+    padding: 2.5em 1.25em;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 760px) {
+  /* line 87, ../sass/templates/_tmpl-layers.scss */
+  .layer__flex-parent {
+    -js-display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    width: 100%;
+  }
+  /* line 93, ../sass/templates/_tmpl-layers.scss */
+  .layer__flex-child {
+    -js-display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-height: 27.5em;
+    width: 100%;
+  }
+  /* line 101, ../sass/templates/_tmpl-layers.scss */
+  .layer__image, .layer__content {
+    width: 50%;
+  }
+  /* line 106, ../sass/templates/_tmpl-layers.scss */
+  .layer__content {
+    padding: 3.125em 2.5em;
+  }
+  /* line 111, ../sass/templates/_tmpl-layers.scss */
+  .layer:nth-of-type(even) .layer__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+  /* line 118, ../sass/templates/_tmpl-layers.scss */
+  .layer:nth-of-type(even) .layer__content {
+    -webkit-align-self: flex-end;
+    -moz-align-self: flex-end;
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+  }
+  /* line 124, ../sass/templates/_tmpl-layers.scss */
+  .layer:nth-of-type(odd) .layer__image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
 /*---------------------------------------------------------
  * !COLORBOX
  *---------------------------------------------------------*/
@@ -2174,43 +2386,50 @@ select[multiple="multiple"] {
   font-weight: 600;
 }
 
-/* line 104, ../sass/plugins/_gravity-forms.scss */
+/* line 97, ../sass/plugins/_gravity-forms.scss */
+.gform_button {
+  margin-top: 30px;
+}
+
+/* line 105, ../sass/plugins/_gravity-forms.scss */
 .gfield_radio,
 .gfield_checkbox {
   padding-left: 0;
 }
-/* line 108, ../sass/plugins/_gravity-forms.scss */
+/* line 109, ../sass/plugins/_gravity-forms.scss */
 .gfield_radio label,
 .gfield_checkbox label {
   display: inline;
   font-weight: 400;
 }
 
-/* line 118, ../sass/plugins/_gravity-forms.scss */
+/* line 119, ../sass/plugins/_gravity-forms.scss */
 .ginput_complex {
   overflow: hidden;
 }
-/* line 121, ../sass/plugins/_gravity-forms.scss */
+/* line 122, ../sass/plugins/_gravity-forms.scss */
 .ginput_complex label {
   display: block;
-  font-size: 5.3125%em;
+  font-size: 85%;
+  font-weight: 400;
+  margin-bottom: 0;
 }
-/* line 126, ../sass/plugins/_gravity-forms.scss */
+/* line 129, ../sass/plugins/_gravity-forms.scss */
 .ginput_complex input {
   width: 100%;
 }
-/* line 130, ../sass/plugins/_gravity-forms.scss */
+/* line 133, ../sass/plugins/_gravity-forms.scss */
 .ginput_complex .ginput_right,
 .ginput_complex .ginput_left {
   float: left;
   width: 49%;
 }
-/* line 136, ../sass/plugins/_gravity-forms.scss */
+/* line 139, ../sass/plugins/_gravity-forms.scss */
 .ginput_complex .ginput_right {
   margin-left: 2%;
 }
 
-/* line 147, ../sass/plugins/_gravity-forms.scss */
+/* line 150, ../sass/plugins/_gravity-forms.scss */
 .name_prefix,
 .name_first,
 .name_middle,
@@ -2219,31 +2438,31 @@ select[multiple="multiple"] {
   float: left;
 }
 
-/* line 155, ../sass/plugins/_gravity-forms.scss */
+/* line 158, ../sass/plugins/_gravity-forms.scss */
 .gf_name_has_5 span {
   margin-left: 1%;
   width: 19.2%;
 }
 
-/* line 160, ../sass/plugins/_gravity-forms.scss */
+/* line 163, ../sass/plugins/_gravity-forms.scss */
 .gf_name_has_4 span {
   margin-left: 2%;
   width: 23.5%;
 }
 
-/* line 165, ../sass/plugins/_gravity-forms.scss */
+/* line 168, ../sass/plugins/_gravity-forms.scss */
 .gf_name_has_3 span {
   margin-left: 2%;
   width: 32%;
 }
 
-/* line 170, ../sass/plugins/_gravity-forms.scss */
+/* line 173, ../sass/plugins/_gravity-forms.scss */
 .gf_name_has_2 span {
   margin-left: 2%;
   width: 49%;
 }
 
-/* line 175, ../sass/plugins/_gravity-forms.scss */
+/* line 178, ../sass/plugins/_gravity-forms.scss */
 .gf_name_has_5 span:first-child,
 .gf_name_has_4 span:first-child,
 .gf_name_has_3 span:first-child,
@@ -2251,7 +2470,7 @@ select[multiple="multiple"] {
   margin-left: 0;
 }
 
-/* line 185, ../sass/plugins/_gravity-forms.scss */
+/* line 188, ../sass/plugins/_gravity-forms.scss */
 .gf_left_half,
 .gf_right_half,
 .gf_left_third,
@@ -2260,7 +2479,7 @@ select[multiple="multiple"] {
   float: left;
   clear: none;
 }
-/* line 193, ../sass/plugins/_gravity-forms.scss */
+/* line 196, ../sass/plugins/_gravity-forms.scss */
 .gf_left_half .small,
 .gf_left_half .medium,
 .gf_left_half .large,
@@ -2279,31 +2498,31 @@ select[multiple="multiple"] {
   width: 100% !important;
 }
 
-/* line 202, ../sass/plugins/_gravity-forms.scss */
+/* line 205, ../sass/plugins/_gravity-forms.scss */
 .gf_left_half,
 .gf_right_half {
   width: 49%;
 }
 
-/* line 207, ../sass/plugins/_gravity-forms.scss */
+/* line 210, ../sass/plugins/_gravity-forms.scss */
 .gf_right_half {
   margin-left: 2%;
 }
 
-/* line 212, ../sass/plugins/_gravity-forms.scss */
+/* line 215, ../sass/plugins/_gravity-forms.scss */
 .gf_left_third,
 .gf_middle_third,
 .gf_right_third {
   width: 32%;
 }
 
-/* line 218, ../sass/plugins/_gravity-forms.scss */
+/* line 221, ../sass/plugins/_gravity-forms.scss */
 .gf_middle_third,
 .gf_right_third {
   margin-left: 2%;
 }
 
-/* line 226, ../sass/plugins/_gravity-forms.scss */
+/* line 229, ../sass/plugins/_gravity-forms.scss */
 .gfield_date_month,
 .gfield_date_day,
 .gfield_date_year,
@@ -2314,7 +2533,7 @@ select[multiple="multiple"] {
   margin-left: 2%;
   width: 6.25em;
 }
-/* line 236, ../sass/plugins/_gravity-forms.scss */
+/* line 239, ../sass/plugins/_gravity-forms.scss */
 .gfield_date_month input,
 .gfield_date_day input,
 .gfield_date_year input,
@@ -2325,43 +2544,43 @@ select[multiple="multiple"] {
   width: 100%;
 }
 
-/* line 243, ../sass/plugins/_gravity-forms.scss */
+/* line 246, ../sass/plugins/_gravity-forms.scss */
 .gfield_date_dropdown_month,
 .gfield_date_month {
   margin-left: 0;
 }
 
-/* line 249, ../sass/plugins/_gravity-forms.scss */
+/* line 252, ../sass/plugins/_gravity-forms.scss */
 .gfield_time_hour,
 .gfield_time_minute,
 .gfield_time_ampm {
   float: left;
 }
-/* line 254, ../sass/plugins/_gravity-forms.scss */
+/* line 257, ../sass/plugins/_gravity-forms.scss */
 .gfield_time_hour input,
 .gfield_time_minute input,
 .gfield_time_ampm input {
   width: 3.375em;
 }
-/* line 258, ../sass/plugins/_gravity-forms.scss */
+/* line 261, ../sass/plugins/_gravity-forms.scss */
 .gfield_time_hour label,
 .gfield_time_minute label,
 .gfield_time_ampm label {
   display: block;
 }
 
-/* line 264, ../sass/plugins/_gravity-forms.scss */
+/* line 267, ../sass/plugins/_gravity-forms.scss */
 .gfield_time_minute {
   margin-left: 0.25em;
 }
 
-/* line 268, ../sass/plugins/_gravity-forms.scss */
+/* line 271, ../sass/plugins/_gravity-forms.scss */
 .gfield_time_ampm {
   margin-left: 0.75em;
   width: 3.75em;
 }
 
-/* line 277, ../sass/plugins/_gravity-forms.scss */
+/* line 280, ../sass/plugins/_gravity-forms.scss */
 .gform_drop_area {
   border: 2px dashed #ddd;
   color: #aaa;
@@ -2370,22 +2589,22 @@ select[multiple="multiple"] {
   text-align: center;
 }
 
-/* line 288, ../sass/plugins/_gravity-forms.scss */
+/* line 291, ../sass/plugins/_gravity-forms.scss */
 .datepicker {
   max-width: 8.75em;
 }
 
-/* line 292, ../sass/plugins/_gravity-forms.scss */
+/* line 295, ../sass/plugins/_gravity-forms.scss */
 .ui-datepicker {
   box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.2);
   font-size: 9px;
 }
-/* line 296, ../sass/plugins/_gravity-forms.scss */
+/* line 299, ../sass/plugins/_gravity-forms.scss */
 .ui-datepicker a {
   text-decoration: none;
 }
 
-/* line 303, ../sass/plugins/_gravity-forms.scss */
+/* line 306, ../sass/plugins/_gravity-forms.scss */
 .ui-datepicker-header {
   background-color: #fff;
   /* set the header background color */
@@ -2401,12 +2620,12 @@ select[multiple="multiple"] {
   border-color: #666;
 }
 
-/* line 317, ../sass/plugins/_gravity-forms.scss */
+/* line 320, ../sass/plugins/_gravity-forms.scss */
 .ui-datepicker-title {
   text-align: center;
 }
 
-/* line 321, ../sass/plugins/_gravity-forms.scss */
+/* line 324, ../sass/plugins/_gravity-forms.scss */
 .ui-datepicker-title select {
   border: 1px solid #e0e0e0;
   font-size: 1.22222em;
@@ -2415,7 +2634,7 @@ select[multiple="multiple"] {
   margin-top: 2.5%;
 }
 
-/* line 329, ../sass/plugins/_gravity-forms.scss */
+/* line 332, ../sass/plugins/_gravity-forms.scss */
 .ui-datepicker-prev,
 .ui-datepicker-next {
   display: inline-block;
@@ -2426,19 +2645,19 @@ select[multiple="multiple"] {
   width: 30px;
 }
 
-/* line 339, ../sass/plugins/_gravity-forms.scss */
+/* line 342, ../sass/plugins/_gravity-forms.scss */
 .ui-datepicker-prev {
   float: left;
   background-position: center -30px;
 }
 
-/* line 344, ../sass/plugins/_gravity-forms.scss */
+/* line 347, ../sass/plugins/_gravity-forms.scss */
 .ui-datepicker-next {
   float: right;
   background-position: center 0px;
 }
 
-/* line 349, ../sass/plugins/_gravity-forms.scss */
+/* line 352, ../sass/plugins/_gravity-forms.scss */
 .ui-datepicker thead {
   background: #f7f7f7;
   background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Y3ZjdmNyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmMWYxZjEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
@@ -2452,7 +2671,7 @@ select[multiple="multiple"] {
   border-bottom: 1px solid #bbb;
 }
 
-/* line 362, ../sass/plugins/_gravity-forms.scss */
+/* line 365, ../sass/plugins/_gravity-forms.scss */
 .ui-datepicker th {
   text-transform: uppercase;
   text-align: center;
@@ -2461,29 +2680,29 @@ select[multiple="multiple"] {
   color: #fff;
 }
 
-/* line 370, ../sass/plugins/_gravity-forms.scss */
+/* line 373, ../sass/plugins/_gravity-forms.scss */
 .ui-datepicker tbody td {
   padding: 0;
   border-top: 1px solid #bbb;
   border-right: 1px solid #bbb;
 }
 
-/* line 376, ../sass/plugins/_gravity-forms.scss */
+/* line 379, ../sass/plugins/_gravity-forms.scss */
 .ui-datepicker tbody td:last-child {
   border-right: 0px;
 }
 
-/* line 380, ../sass/plugins/_gravity-forms.scss */
+/* line 383, ../sass/plugins/_gravity-forms.scss */
 .ui-datepicker tbody tr {
   border-bottom: 1px solid #bbb;
 }
 
-/* line 384, ../sass/plugins/_gravity-forms.scss */
+/* line 387, ../sass/plugins/_gravity-forms.scss */
 .ui-datepicker tbody tr:last-child {
   border-bottom: 0px;
 }
 
-/* line 388, ../sass/plugins/_gravity-forms.scss */
+/* line 391, ../sass/plugins/_gravity-forms.scss */
 .ui-datepicker td span,
 .ui-datepicker td a {
   display: inline-block;
@@ -2496,7 +2715,7 @@ select[multiple="multiple"] {
   filter: dropshadow(color=#fff, offx=1, offy=1);
 }
 
-/* line 401, ../sass/plugins/_gravity-forms.scss */
+/* line 404, ../sass/plugins/_gravity-forms.scss */
 .ui-datepicker-calendar .ui-state-default {
   background: #ededed;
   background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VkZWRlZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkZWRlZGUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
@@ -2512,12 +2731,12 @@ select[multiple="multiple"] {
   box-shadow: inset 1px 1px 0px 0px rgba(250, 250, 250, 0.5);
 }
 
-/* line 416, ../sass/plugins/_gravity-forms.scss */
+/* line 419, ../sass/plugins/_gravity-forms.scss */
 .ui-datepicker-calendar .ui-state-hover {
   background: #f7f7f7;
 }
 
-/* line 420, ../sass/plugins/_gravity-forms.scss */
+/* line 423, ../sass/plugins/_gravity-forms.scss */
 .ui-datepicker-calendar .ui-state-active {
   background: #FFF2AA;
   /* set the active date background color */
@@ -2532,53 +2751,53 @@ select[multiple="multiple"] {
   margin: -1px;
 }
 
-/* line 433, ../sass/plugins/_gravity-forms.scss */
+/* line 436, ../sass/plugins/_gravity-forms.scss */
 .ui-datepicker-unselectable .ui-state-default {
   background: #f4f4f4;
   color: #b4b3b3;
 }
 
-/* line 438, ../sass/plugins/_gravity-forms.scss */
+/* line 441, ../sass/plugins/_gravity-forms.scss */
 .ui-datepicker-calendar td:first-child .ui-state-active {
   width: 29px;
   margin-left: 0;
 }
 
-/* line 443, ../sass/plugins/_gravity-forms.scss */
+/* line 446, ../sass/plugins/_gravity-forms.scss */
 .ui-datepicker-calendar td:last-child .ui-state-active {
   width: 29px;
   margin-right: 0;
 }
 
-/* line 448, ../sass/plugins/_gravity-forms.scss */
+/* line 451, ../sass/plugins/_gravity-forms.scss */
 .ui-datepicker-calendar tr:last-child .ui-state-active {
   height: 29px;
   margin-bottom: 0;
 }
 
-/* line 453, ../sass/plugins/_gravity-forms.scss */
+/* line 456, ../sass/plugins/_gravity-forms.scss */
 td.ui-datepicker-unselectable.ui-state-disabled {
   background-color: #d7d7d7;
 }
 
-/* line 457, ../sass/plugins/_gravity-forms.scss */
+/* line 460, ../sass/plugins/_gravity-forms.scss */
 table.ui-datepicker-calendar {
   margin: 0 0 0 0 !important;
 }
 
-/* line 461, ../sass/plugins/_gravity-forms.scss */
+/* line 464, ../sass/plugins/_gravity-forms.scss */
 body div#ui-datepicker-div[style] {
   z-index: 9999 !important;
 }
 
-/* line 468, ../sass/plugins/_gravity-forms.scss */
+/* line 471, ../sass/plugins/_gravity-forms.scss */
 .gf_progressbar {
   border-radius: 3px;
   background: #ccc;
   padding: 0.3125em;
 }
 
-/* line 474, ../sass/plugins/_gravity-forms.scss */
+/* line 477, ../sass/plugins/_gravity-forms.scss */
 .gf_progressbar_percentage {
   border-radius: 3px;
   background: #E58E1A;
@@ -2588,30 +2807,30 @@ body div#ui-datepicker-div[style] {
   text-align: center;
 }
 
-/* line 498, ../sass/plugins/_gravity-forms.scss */
+/* line 501, ../sass/plugins/_gravity-forms.scss */
 .field_description_below .gfield_description {
   margin-top: 0.25em;
 }
 
-/* line 509, ../sass/plugins/_gravity-forms.scss */
+/* line 512, ../sass/plugins/_gravity-forms.scss */
 .gfield .small {
   width: 25%;
 }
-/* line 513, ../sass/plugins/_gravity-forms.scss */
+/* line 516, ../sass/plugins/_gravity-forms.scss */
 .gfield .medium {
   width: 45.5%;
 }
-/* line 517, ../sass/plugins/_gravity-forms.scss */
+/* line 520, ../sass/plugins/_gravity-forms.scss */
 .gfield .large {
   width: 100%;
 }
 
-/* line 531, ../sass/plugins/_gravity-forms.scss */
+/* line 534, ../sass/plugins/_gravity-forms.scss */
 .gform_widget .top_label input,
 .gform_widget .uploader {
   width: 100%;
 }
-/* line 536, ../sass/plugins/_gravity-forms.scss */
+/* line 539, ../sass/plugins/_gravity-forms.scss */
 .gform_widget .uploader span.action {
   position: absolute;
   right: 0;
@@ -2619,40 +2838,56 @@ body div#ui-datepicker-div[style] {
 }
 
 @media (max-width: 43.75em) {
-  /* line 553, ../sass/plugins/_gravity-forms.scss */
+  /* line 554, ../sass/plugins/_gravity-forms.scss */
+  .name_prefix,
+  .name_first,
+  .name_middle,
+  .name_last,
+  .name_suffix,
+  .gf_name_has_5 span,
+  .gf_name_has_4 span,
+  .gf_name_has_3 span,
+  .gf_name_has_2 span,
+  .gf_right_half,
+  .gf_middle_third,
+  .gf_right_third {
+    margin-left: 0;
+  }
+
+  /* line 571, ../sass/plugins/_gravity-forms.scss */
   .ginput_complex > span {
     width: 100%;
   }
-  /* line 557, ../sass/plugins/_gravity-forms.scss */
+  /* line 575, ../sass/plugins/_gravity-forms.scss */
   .ginput_complex .name_first,
   .ginput_complex .name_last,
   .ginput_complex .ginput_left,
   .ginput_complex .ginput_right {
     width: 100%;
   }
-  /* line 564, ../sass/plugins/_gravity-forms.scss */
+  /* line 582, ../sass/plugins/_gravity-forms.scss */
   .ginput_complex .ginput_right {
     margin-left: 0;
   }
 
-  /* line 570, ../sass/plugins/_gravity-forms.scss */
+  /* line 588, ../sass/plugins/_gravity-forms.scss */
   .gf_left_half,
   .gf_right_half {
     width: 100%;
   }
-  /* line 574, ../sass/plugins/_gravity-forms.scss */
+  /* line 592, ../sass/plugins/_gravity-forms.scss */
   .gf_left_half input,
   .gf_right_half input {
     width: 100%;
   }
 
-  /* line 581, ../sass/plugins/_gravity-forms.scss */
+  /* line 599, ../sass/plugins/_gravity-forms.scss */
   .gfield input,
   .gfield .selector {
     width: 100%;
   }
 
-  /* line 588, ../sass/plugins/_gravity-forms.scss */
+  /* line 606, ../sass/plugins/_gravity-forms.scss */
   .gform_wrapper .medium,
   .gform_wrapper .large {
     width: 100% !important;
