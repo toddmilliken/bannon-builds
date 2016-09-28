@@ -2,10 +2,12 @@
 
 include_once('functions-client.php');
 include_once('functions-parts.php');
+include_once('functions-customizer.php');
 
 Custom_Theme::_init();
 
-class Custom_Theme {
+class Custom_Theme {		
+	
 
 	// ! @static array $admin_menus_to_hide A list of admin menus to hide
   	static $admin_menus_to_hide = array(
@@ -51,7 +53,6 @@ class Custom_Theme {
 
 		// Add featured image support
 		add_theme_support( 'post-thumbnails' ); 
-		add_image_size( 'mobile', 680 );
 
 		// Add HTML5 support for the search form.
 		add_theme_support( 'html5', array( 'search-form' ) );
@@ -84,6 +85,7 @@ class Custom_Theme {
 			add_filter( 'tiny_mce_before_init', array(__CLASS__, 'my_mce_before_init_insert_formats') );
 			return;
 		}
+		
 
 		/*	Frontend hooks	*/ 
 		add_action('wp_enqueue_scripts', array(__CLASS__, 'enqueue_scripts'));
@@ -275,3 +277,14 @@ class Custom_Theme {
 
 	
 }
+
+
+function base_set_image_sizes()
+{
+	add_image_size( 'small', 380 );
+	add_image_size( 'mobile', 680 );		
+	add_image_size( 'tablet', 1024 );
+	add_image_size( 'section-header', 1600, 280, true );
+	add_image_size( 'desktop', 1800 );
+}
+add_action( 'after_setup_theme', 'base_set_image_sizes' );
