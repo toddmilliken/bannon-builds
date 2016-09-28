@@ -1,21 +1,10 @@
 .layer {
-	display: table;
-	height: em(440);
 	position: relative;
-	table-layout: fixed;
-	width: 100%;
 	
-	&__content ,
-	&__image {
-		display: table-cell;
-		height: 100%;
-		position: relative;
-		vertical-align: middle;
-		width: 50%;
-	}
-	
-	&__content {
-		padding: em(40) em(80);
+	&__image {		
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		background-size: cover;	
 	}
 	
 	&__title {
@@ -27,20 +16,120 @@
 	&__p {
 		color: $secondary-color;
 		font-size: em(20);
-	}
-	
-	&__image_bg {
-		background-position: 50% 50%;
-		background-repeat: no-repeat;
-		background-size: cover;
-		height: 100%;
-		width: 100%;
+		
+		&:last-of-type {
+			margin-bottom: 0;
+		}
 	}
 	
 	&:nth-child(even) {
 		.layer__title {
 			color: $primary-color;
 		}
+	}
+	
+}
+
+
+@media screen and (max-width: 759px) {
+	
+	.layer {
+		&__flex-parent {	
+	  	@include flexbox; //by having a parent with flex-direction:row, the min-height bug in IE doesn't stick around.
+		  @include flex-direction(row);
+		  width: 100%;
+		}
+		
+		&__flex-child {
+			@include flexbox; //if you have items within the child you'll need to make it display flex
+			@include justify-content(center);
+			@include flex-direction(column);
+	  	min-height: em(250);
+	  	width: 100%;
+		}
+		
+		&__image {
+			position: absolute;
+				top: 0;
+				right: 0;
+				left: 0;	
+				bottom: 0;
+				z-index: 0;
+				
+				&:after {
+					background: rgba(255,255,255,0.85);
+					content: '';
+					position: absolute;
+						top: 0;
+						right: 0;
+						left: 0;	
+						bottom: 0;
+						z-index: 0;
+				}
+		}
+		
+		&__content {
+			padding: em(40) em(20);
+			position: relative;
+				z-index: 2;
+			text-align: center;
+		}
+		
+	}
+	
+}
+
+@media screen and (min-width: 760px) {
+	
+	
+	.layer {
+		
+		&__flex-parent {	
+	  	@include flexbox; //by having a parent with flex-direction:row, the min-height bug in IE doesn't stick around.
+		  @include flex-direction(row);
+		  width: 100%;
+		}
+		
+		&__flex-child {
+			@include flexbox; //if you have items within the child you'll need to make it display flex
+			@include justify-content(center);
+			@include flex-direction(column);
+	  	min-height: em(440);
+	  	width: 100%;
+		}
+		
+		&__image , 
+		&__content {
+			width: 50%;
+		}		
+		
+		&__content {
+			padding: em(50) em(40);
+		}
+		
+		&:nth-of-type(even) {
+			.layer__image {
+				position: absolute;
+					top: 0;
+					left: 0;
+					bottom: 0;
+			}
+			
+			.layer__content {
+				@include align-self(flex-end);
+			}
+		}		
+		
+		&:nth-of-type(odd) {	
+			.layer__image {
+				position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+			}
+		}
+		
+		
 	}
 	
 }

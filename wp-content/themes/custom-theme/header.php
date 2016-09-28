@@ -10,21 +10,12 @@
 <body <?php body_class(); ?>>
 	<header class="site-head">
 		<?php
-			//! SITE LOGO
-			if ( $logo = get_field('opts_logo', 'options') ) :
-				echo '
-					<a class="logo" href="' . home_url() . '">
-						<img class="logo__img" src="' . $logo['url'] . '" alt="' . $logo['alt'] . '" />
-					</a>
-				';
-			endif;
 			echo '
-				<a href="' . home_url() . '" class="logo__custom">
+				<a href="' . home_url() . '" class="logo">
 					<span class="logo__sign"><em></em></span>
 					<span class="logo__text"><strong>bannon</strong></span>
 				</a>
-			';
-			
+			';			
 		?>
 		<a href="javascript:;" class="mob-menu">
 			<div></div>
@@ -35,6 +26,19 @@
 			<?php
 				//! MAIN MENU 
 				wp_nav_menu('container=&container_class=&menu_class=main-menu clearfix&theme_location=main-menu&fallback_cb=false');
+				
+				//! MOBILE FOOTER MENU 
+				if ( has_nav_menu('footer-menu') ) :
+					wp_nav_menu(array(
+						'container' => '',
+						'container_class' => '',
+						'theme_location'  => 'footer-menu',
+						'menu'            => '',
+						'items_wrap' 	  	=> '<ul class="%2$s">%3$s</ul>',
+						'menu_class'      => 'footer-menu',
+					));
+				endif;
+				
 			?>				
 		</nav>
 	</header>

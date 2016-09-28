@@ -22,7 +22,7 @@ h2 {
 	color: $tertiary-color;
 	font-size: em($h2);
 	font-weight: 700;
-	line-height: ( 30 / $h2 );
+	line-height: 1.1;
 	margin-bottom: em(24, $h2);
 }
 
@@ -43,12 +43,14 @@ h4 {
 }
 
 h5 {
+	color: $secondary-color;
 	font-size: em($h5);
 	font-weight: 700;
 	margin-bottom: em(2, $h5);
 }
 
 h6 {
+	color: $secondary-color;
 	font-size: em($h6);
 	font-weight: 700;
 	margin-bottom: em(4, $h6);

@@ -11,16 +11,25 @@ get_template_part('partials/masthead');
 			$html = '<div class="layers">';
 			$index = 1;
 			foreach ( $layers as $layer ) :			
-			
+				$image_html = '';
 				//! LAYER IMAGE HTML 
-				$image_html = '<div class="layer__image">';
-				if ( $image = $layer['layer_img'] ) :
-					$image_html .= '<div class="layer__image_bg" style="background-image: url(' . $image['url'] . ');"></div>';
+				if ( $bg_img = $layer['layer_img'] ) :
+					$image_html = '
+						<div class="layer__image picturefill-background">
+							<span data-src="' . $bg_img['sizes']['desktop'] . '" data-media="(min-width: 1025px)"></span>
+							<span data-src="' . $bg_img['sizes']['tablet'] . '" data-media="(max-width: 1024px)"></span>
+							<span data-src="' . $bg_img['sizes']['mobile'] . '" data-media="(max-width: 680px)"></span>
+						</div>
+					';		
 				endif;
-				$image_html .= '</div>';
+				
 			
 				//! BEGIN OUTPUT
-				$html .= '<div class="layer">';
+				$html .= '<div class="layer">
+					
+					<div class="layer__flex-parent">
+						<div class="layer__flex-child">
+				';
 					
 					if ( $index % 2 == 0 ) 
 						$html .= $image_html;
@@ -37,7 +46,9 @@ get_template_part('partials/masthead');
 						$html .= $image_html;
 								
 				
-				$html .= '</div>';
+				$html .= '</div>
+							</div>
+						</div>';
 				
 				$index++;
 			endforeach;

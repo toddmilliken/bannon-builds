@@ -20,6 +20,11 @@ body {
 	font-size: 1em;
 	font-weight: 300;
 	line-height: 1.8;
+	
+	@include smartphone-landscape-down {
+		line-height: 1.4;
+	}
+	
 }
 
 

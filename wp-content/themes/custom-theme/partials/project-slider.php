@@ -12,7 +12,7 @@
 				// SETUP CLASSES
 				//---
 				$slide_classes = array('project-slide');
-				$image_classes = array('project-slide__image');
+				$image_classes = array('project-slide__image', 'picturefill-background');
 				$content_classes = array('project-slide__content');
 				
 				// slide type
@@ -47,9 +47,19 @@
 				$html .= '<div class="' . implode(' ', $slide_classes) . '">';
 					
 					//! slide image
-					if ( $image = $slide['project_slide_img'] ) :
-						$html .= '<div class="' . implode(' ', $image_classes) . '" style="background-image: url(' . $image['url'] . ');"></div>';
+						
+					if ( $bg_img = $slide['project_slide_img'] ) :
+					
+						$html .= '
+							<div class="' . implode(' ', $image_classes) . '">
+								<span data-src="' . $bg_img['sizes']['desktop'] . '" data-media="(min-width: 1025px)"></span>
+								<span data-src="' . $bg_img['sizes']['tablet'] . '" data-media="(max-width: 1024px)"></span>
+								<span data-src="' . $bg_img['sizes']['mobile'] . '" data-media="(max-width: 680px)"></span>
+							</div>
+						';
+						
 					endif;
+					
 					
 					//! slide content
 					if ( $slide['project_slide_is_content'] ) :
