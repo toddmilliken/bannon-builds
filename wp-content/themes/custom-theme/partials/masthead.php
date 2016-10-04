@@ -14,7 +14,9 @@
 	global $post;
 
 	$id = $post->ID;
-	$masthead = get_field('int_masthead_image', $id);
+	//$masthead = get_field('int_masthead_image', $id);
+	$masthead = get_header_image();
+	$masthead_color = get_header_textcolor();
 	
 
 	//! IF NO MASTHEAD, CHECK ANCESTORS
@@ -49,7 +51,7 @@
 			<div class="tble-cell">
 				<div class="masthead-content">
 					<div class="inner">
-						<h1 class="masthead-title"><?php echo Custom_Client::get_page_title(false); ?></h1>
+						<h1 class="masthead-title"<?php echo ( $masthead_color ? ' style="color: #' . $masthead_color . '"' : '' ); ?>><?php echo Custom_Client::get_page_title(false); ?></h1>
 					</div>
 				</div>
 		</div>

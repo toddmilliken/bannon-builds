@@ -291,3 +291,23 @@ function base_set_image_sizes()
 	add_image_size( 'desktop', 1800 );
 }
 add_action( 'after_setup_theme', 'base_set_image_sizes' );
+
+
+
+/**
+ * Retrieves the attachment ID from the file URL.
+ *
+ * Useful for getting other image sizes, when you only have the URL
+ * to one image size, such as the custom-background hook.
+ *
+ * @since 1.0.0
+ *
+ * @link https://pippinsplugins.com/retrieve-attachment-id-from-image-url/
+ *
+ * @param string $attachment_url The URL to the attachment file that should return an attachment ID for.
+ */
+function base_get_attachment_id_by_url( $attachment_url ) {
+	global $wpdb;
+	$attachment_object = $wpdb->get_col($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE guid='%s';", $attachment_url )); 
+	return $attachment_object[0]; 
+}
