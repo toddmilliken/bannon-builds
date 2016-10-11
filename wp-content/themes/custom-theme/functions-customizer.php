@@ -39,11 +39,11 @@ add_action( 'customize_register', 'base_customizer_register' );
 
 function base_update_customizer_header()
 {
-	
 
   ?>
 
 	<style type="text/css">
+		
 		.masthead-bg { 
 			background-image: url(<?php echo( get_header_image() ); ?>) !important; 
 		}
@@ -55,6 +55,7 @@ function base_update_customizer_header()
 	</style>
 
   <?php
+	  
 }
 add_action( 'wp_head', 'base_update_customizer_header' );
 

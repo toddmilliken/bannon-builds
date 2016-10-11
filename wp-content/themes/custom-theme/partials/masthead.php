@@ -11,47 +11,49 @@
 	 *-----------------------------------------------------------------------------------------------------------*/
 	
 
-	global $post;
+	// global $post;
 
-	$id = $post->ID;
-	//$masthead = get_field('int_masthead_image', $id);
-	$masthead = get_header_image();
-	$masthead_color = get_header_textcolor();
+	$masthead = array(
+		'background_color' => false,
+		'background_image' => get_header_image(),
+		'text_color' => get_header_textcolor()
+	);
 	
 
 	//! IF NO MASTHEAD, CHECK ANCESTORS
-	if ( !$masthead ) :
-		$ancestors = get_post_ancestors($post);
-		foreach ( $ancestors as $a ) :
-			if ( $has_masthead_image = get_field('int_masthead_image', $a) ) :
-				$masthead = $has_masthead_image;
-				break;
-			endif;
-		endforeach;
+	if ( get_field('is_customize_header') ) :
+		
+		// Background Color
+		if ( $img = get_field('masthead_img') ) :
+			$masthead['background_images'] = $img['sizes']['section_header'];
+		endif;
+		
+		// Background Image
+		$masthead['background_image'] = false;
+		if (  ( $bg_color = get_field('masthead_bg_color') )  &&  ( get_field('masthead_bg_color') !== '333333' )  ) :
+			$masthead['background_color'] = $bg_color;
+		endif;
+		
+		// Text Color
+		if (  ( $text_color = get_field('masthead_text_color') )  &&  ( get_field('masthead_text_color') !== 'FFFFFF' )  ) :
+			$masthead['text_color'] = $text_color;
+		endif;
+		
 	endif;
-	
-
-	//! IF STILL NO MASTHEAD, OR IS SEARCH, OR IS 404, GET MASTHEAD DEFAULT IN SITE OPTIONS
-	if ( !$masthead || is_search() || is_404() ) $masthead = get_field('opts_masthead', 'options');
-	
-
-	//! VERIFY THERE IS A MASTHEAD IMAGE AND BUILD HTML
-	$blank_gif = get_template_directory_uri() . '/core/image/blank.gif';
 
 ?>		
-	<section class="masthead">
-		<?php if ( $masthead ) : ?>
+	<section class="masthead"<?php echo ( ! empty($masthead['background_color']) ? ' style="background-color: ' . $masthead['background_color'] . '"' : '' ); ?>>
+		<?php if ( ! empty($masthead['background_image']) ) : ?>
 			<div class="masthead-bg picturefill-background">
-				<span data-src="<?php echo $masthead['url']; ?>" data-media="(min-width: 681px)"></span>
-				<span data-src="<?php echo $blank_gif; ?>" data-media="(max-width: 680px)"></span>
-			</div>
-			
+				<span data-src="<?php echo $masthead['background_image']; ?>" data-media="(min-width: 681px)"></span>
+				<span data-src="<?php echo get_template_directory_uri() . '/core/image/blank.gif'; ?>" data-media="(max-width: 680px)"></span>
+			</div>			
 		<?php endif; ?>
 		<div class="tble">
 			<div class="tble-cell">
 				<div class="masthead-content">
 					<div class="inner">
-						<h1 class="masthead-title"<?php echo ( $masthead_color ? ' style="color: #' . $masthead_color . '"' : '' ); ?>><?php echo Custom_Client::get_page_title(false); ?></h1>
+						<h1 class="masthead-title"<?php echo ( ! empty($masthead['text_color']) ? ' style="color: ' . $masthead['text_color'] . ' !important"' : '' ); ?>><?php echo Custom_Client::get_page_title(false); ?></h1>
 					</div>
 				</div>
 		</div>
