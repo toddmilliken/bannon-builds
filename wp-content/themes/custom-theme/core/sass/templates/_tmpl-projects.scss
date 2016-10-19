@@ -10,12 +10,13 @@
 	@include pie-clearfix;
 	margin: 0 em(-12) 0 0;
 	overflow: hidden;
+	padding-top: em(10);
+	padding-bottom: em(10);
 	padding-left: 0 !important;
 	width: 100%;
 }
 
 .griditem {
-	background: #fff;
   margin: 0;
   padding: 0;
   position: relative;
@@ -30,25 +31,30 @@
 }
 
 .griditem__img {
-	@include transition(all 250ms ease 0s);
+	@include transition(transform 500ms ease-in 0s, opacity 500ms ease-in 0s);
 	background-size: cover;
+	opacity: 0.8;
 	position: absolute;
 		top: 0;
 		right: 0;
 		bottom: 0;
 		left: 0;
+	@include scale(1.05, 1.05, 1.05);
 }
 
 .griditem__link {
 	@include backface-visibility(hidden);
+	box-shadow: 0 0 3px 2px rgba(black, 0);
 	display: block;
 	overflow: hidden;
 	padding-top: 58.333333333333%;
 	position: relative;
+	transition: background 500ms ease 0s, box-shadow 500ms ease 0s;
 	width: 100%;
 	
 	&:before {
-		background-color: $secondary-color;
+		//background-color: #333333;
+		background-color: #000;
 		content: '';
 		display: block;
 		position: absolute;
@@ -59,10 +65,12 @@
 	}
 	
 	&:hover {
+		box-shadow: 0 0 3px 2px rgba($primary-color, .5);
 	
 		.griditem__img {
-			@include transform(scale(1.1));
-			opacity: 0.7;
+			@include transition(transform 5.25s cubic-bezier(0.26, 0.1, 0.25, 1) 0s, opacity 2s linear 0s);
+			@include transform(scale(1));
+			opacity: 1;
 		}
 		
 	}
@@ -71,7 +79,8 @@
 .griditem__title {
 	font-size: 16px;
 	font-weight: 300;
-	margin: 10px 0;
+	margin: 16px 0 20px;
+	text-align: left;
 	text-transform: lowercase;
 }
 

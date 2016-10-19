@@ -19,9 +19,9 @@ label,input,textarea,select,button{display:inline-block;margin:0;padding:0;borde
 // Firefox Resets
 //--- 
 button::-moz-focus-inner, 
-input[type="button"]::-moz-focus-inner,
-input[type="submit"]::-moz-focus-inner,
-input[type="reset"]::-moz-focus-inner {
+[type="button"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner {
 	border:0; // remove extra borders on Firefox form elements */
 	padding:0; // remove extra padding on Firefox form elements */
 } 

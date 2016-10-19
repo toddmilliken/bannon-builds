@@ -37,7 +37,7 @@ get_template_part('partials/masthead');
 					//! LAYER CONTENT
 					$html .= '
 						<div class="layer__content">
-							<h3 class="layer__title">' . $layer['layer_title'] . '</h3>
+							<h2 class="layer__title">' . $layer['layer_title'] . '</h2>
 							<p class="layer__p">' . $layer['layer_content'] . '</p>
 						</div>
 					';

@@ -92,8 +92,10 @@
 .more {
 	@include transition-duration(500ms);
 	@include transition-property(color);
-	font-size: em(14);
-	font-weight: 700;
+	color: darken($primary-color, 12%);
+	font-size: em(15);
+	font-weight: 400;
+	letter-spacing: 0.05em;
 //	margin-left: em(4, 14);
 	position: relative;
 	text-transform: uppercase;
@@ -105,8 +107,8 @@
 	&:after {
 		content: '\f105';
 		font-family: $font-awesome;
-		position: absolute;
-			right: -9px;
+		margin-left: 5px;
+		position: relative;
 	}
 	
 }
@@ -114,26 +116,34 @@
 //---
 // Button link styles
 //---
+$btn-color: $secondary-color;
+$btn-size: 18;
 %btn {
 	@include transition-property(all);
 	@include transition-duration(500ms);
-	border: 1px solid #424242;
+	background: tint( $btn-color, 88% );
+	border: 2px solid $btn-color;
+	color: $secondary-color;
 	display: inline-block;
-	font-weight: 300;
-	padding: em(12) em(24);
+	font-size: em($btn-size);
+	font-weight: 400;
+	line-height: 1.1;
+	padding: em(15, $btn-size) em(28, $btn-size) em(12, $btn-size);
 	text-align: center;
-	text-transform: none;
-	white-space: nowrap;
-	
-	&:hover {
-		background: #f5f5f5;	
-	}
-	
+	text-transform: lowercase;
+	white-space: nowrap;	
 }
 
-.btn {
+.btn ,
+[type="submit"] {
 	@extend %btn;
-	background: $white;
+	
+	&:hover {
+		background: tint($secondary-color, 20%);
+		border-color: tint($secondary-color, 50%);
+		color: white;
+	}
+	
 }
 
 //---

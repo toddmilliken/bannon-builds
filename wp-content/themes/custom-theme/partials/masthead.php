@@ -42,7 +42,7 @@
 	endif;
 
 ?>		
-	<section class="masthead"<?php echo ( ! empty($masthead['background_color']) ? ' style="background-color: ' . $masthead['background_color'] . '"' : '' ); ?>>
+	<section class="masthead"<?php echo ( ! empty($masthead['background_color']) ? ' style="background-color: #' . sanitize_hex_color_no_hash( $masthead['background_color'] ) . '"' : '' ); ?>>
 		<?php if ( ! empty($masthead['background_image']) ) : ?>
 			<div class="masthead-bg picturefill-background">
 				<span data-src="<?php echo $masthead['background_image']; ?>" data-media="(min-width: 681px)"></span>
@@ -53,7 +53,7 @@
 			<div class="tble-cell">
 				<div class="masthead-content">
 					<div class="inner">
-						<h1 class="masthead-title"<?php echo ( ! empty($masthead['text_color']) ? ' style="color: ' . $masthead['text_color'] . ' !important"' : '' ); ?>><?php echo Custom_Client::get_page_title(false); ?></h1>
+						<h1 class="masthead-title"<?php echo ( ! empty($masthead['text_color']) ? ' style="color: #' . sanitize_hex_color_no_hash($masthead['text_color']) . ' !important"' : '' ); ?>><?php echo Custom_Client::get_page_title(false); ?></h1>
 					</div>
 				</div>
 		</div>

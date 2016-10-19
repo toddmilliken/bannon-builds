@@ -200,14 +200,39 @@ $headlineSize: 36;
 		
 }
 
+
+
+.home-projects {
+	@include pie-clearfix;
+	padding: em(60) 0;
+	text-align: center;
+}
+
+.grid.grid--home-projects {
+	margin-bottom: em(40);
+}
+
+
+.btn--home-projects:after {
+	content: '\f105';
+	font-family: $font-awesome;
+	font-size: em(15, $btn-size);
+	margin-left: em(11, 15);
+	position: relative;
+}
+
+
+
+
 @include desktop-menu {
 	.h-left {
 		float: left;
-		padding-right: em(40);
-		width: em(400);
+		padding-right: em(60);
+		width: em(420);
 		
 		+ .h-right {
 			overflow: hidden;
+			padding-right: em(140);
 		}
 		
 		h2 {
@@ -216,13 +241,11 @@ $headlineSize: 36;
 	}
 	
 	.h-right {
-		padding-top: em(4);
+		padding-top: em(10);
 	}
 	
 }
 
-
-///////////////////////////////
 
 .panel {
 	
@@ -233,3 +256,5 @@ $headlineSize: 36;
 		width: auto !important;
 	}
 }
+
+

@@ -3,14 +3,20 @@
 }
 
 .listing-item {
+	border-top: 2px solid tint($primary-color, 85%);
 	margin-bottom: em(40);
+	padding-top: em(40);
 	
 	h4 a {
 		color: $secondary-color;
 	}
 	
 	p {
-		margin-bottom: em(14);
+		margin-bottom: em(10);
+	}
+	
+	> :last-child {
+		margin-bottom: 0 !important;
 	}
 	
 }
