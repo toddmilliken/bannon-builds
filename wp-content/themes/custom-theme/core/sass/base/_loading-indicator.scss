@@ -1,0 +1,52 @@
+.loading-indicator {
+	@include transition( opacity 500ms ease 0ms, visibility 0ms linear 0ms );
+	background-color: white;
+	position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 999;
+		
+	&:after {
+		@include transform( translate( -50%, -50% ) );
+		@include transition( opacity 250ms ease 0s );
+		@include animation-name(pulse_animation);
+		@include animation-duration(1500ms);
+		@include animation-iteration-count(infinite);
+		@include animation-timing-function(linear);
+		background-image: url(../images/logo-sign_50.svg);
+		background-position: 50% 50%;
+		background-repeat: no-repeat;
+		background-size: 50px 51px;	
+		content: "";
+		height: 51px;
+		position: absolute;
+			top: 50%;
+			left: 50%;
+		width: 50px;
+	}
+	
+	&.disabled {
+		@include transition( opacity 500ms ease 0ms, visibility 0ms linear 500ms );
+		opacity: 0;
+		visibility: hidden;
+	}
+	
+}
+
+
+@include keyframes(pulse_animation) {
+	0% { 
+		opacity: .5; 
+		@include transform( scale(1) );
+	}
+	50% { 
+		opacity: 1; 
+		@include transform( scale(1.1) );
+	}
+	100% { 
+		opacity: .5; 
+		@include transform( scale(1) );
+	}
+}

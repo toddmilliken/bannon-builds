@@ -575,6 +575,123 @@ ol li:before {
     width: auto;
   }
 }
+/* line 1, ../sass/base/_loading-indicator.scss */
+.loading-indicator {
+  -moz-transition: opacity 500ms ease 0ms, visibility 0ms linear 0ms;
+  -o-transition: opacity 500ms ease 0ms, visibility 0ms linear 0ms;
+  -webkit-transition: opacity 500ms ease, visibility 0ms linear;
+  -webkit-transition-delay: 0ms, 0ms;
+  transition: opacity 500ms ease 0ms, visibility 0ms linear 0ms;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+}
+/* line 11, ../sass/base/_loading-indicator.scss */
+.loading-indicator:after {
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -moz-transition: opacity 250ms ease 0s;
+  -o-transition: opacity 250ms ease 0s;
+  -webkit-transition: opacity 250ms ease;
+  -webkit-transition-delay: 0s;
+  transition: opacity 250ms ease 0s;
+  -moz-animation-name: pulse_animation;
+  -webkit-animation-name: pulse_animation;
+  animation-name: pulse_animation;
+  -moz-animation-duration: 1500ms;
+  -webkit-animation-duration: 1500ms;
+  animation-duration: 1500ms;
+  -moz-animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  background-image: url(../images/logo-sign_50.svg);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 50px 51px;
+  content: "";
+  height: 51px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+}
+/* line 30, ../sass/base/_loading-indicator.scss */
+.loading-indicator.disabled {
+  -moz-transition: opacity 500ms ease 0ms, visibility 0ms linear 500ms;
+  -o-transition: opacity 500ms ease 0ms, visibility 0ms linear 500ms;
+  -webkit-transition: opacity 500ms ease, visibility 0ms linear;
+  -webkit-transition-delay: 0ms, 500ms;
+  transition: opacity 500ms ease 0ms, visibility 0ms linear 500ms;
+  opacity: 0;
+  visibility: hidden;
+}
+
+@-moz-keyframes pulse_animation {
+  0% {
+    opacity: .5;
+    -moz-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    -moz-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: .5;
+    -moz-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@-webkit-keyframes pulse_animation {
+  0% {
+    opacity: .5;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: .5;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes pulse_animation {
+  0% {
+    opacity: .5;
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: .5;
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
 /* line 5, ../sass/components/_forms.scss */
 label {
   color: #333;
