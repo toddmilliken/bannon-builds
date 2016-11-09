@@ -614,16 +614,16 @@ ol li:before {
   -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
   backface-visibility: hidden;
-  background-image: url(../images/logo-sign_50.svg);
+  background-image: url(../images/logo-sign.png);
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-size: 50px 51px;
+  background-size: 161px 161px;
   content: "";
-  height: 51px;
+  height: 161px;
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 50px;
+  width: 161px;
 }
 /* line 31, ../sass/base/_loading-indicator.scss */
 .loading-indicator.disabled {
@@ -639,58 +639,34 @@ ol li:before {
 @-moz-keyframes pulse_animation {
   0% {
     opacity: .5;
-    -moz-transform: scale(1);
-    transform: scale(1);
   }
   50% {
     opacity: 1;
-    -moz-transform: scale(1.1);
-    transform: scale(1.1);
   }
   100% {
     opacity: .5;
-    -moz-transform: scale(1);
-    transform: scale(1);
   }
 }
 @-webkit-keyframes pulse_animation {
   0% {
     opacity: .5;
-    -webkit-transform: scale(1);
-    transform: scale(1);
   }
   50% {
     opacity: 1;
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
   }
   100% {
     opacity: .5;
-    -webkit-transform: scale(1);
-    transform: scale(1);
   }
 }
 @keyframes pulse_animation {
   0% {
     opacity: .5;
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -webkit-transform: scale(1);
-    transform: scale(1);
   }
   50% {
     opacity: 1;
-    -moz-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
   }
   100% {
     opacity: .5;
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -webkit-transform: scale(1);
-    transform: scale(1);
   }
 }
 /* line 5, ../sass/components/_forms.scss */

@@ -16,16 +16,16 @@
 		@include animation-iteration-count(infinite);
 		@include animation-timing-function(linear);
 		backface-visibility: hidden;
-		background-image: url(../images/logo-sign_50.svg);
+		background-image: url(../images/logo-sign.png);
 		background-position: 50% 50%;
 		background-repeat: no-repeat;
-		background-size: 50px 51px;	
+		background-size: 161px 161px;	
 		content: "";
-		height: 51px;
+		height: 161px;
 		position: absolute;
 			top: 50%;
 			left: 50%;
-		width: 50px;
+		width: 161px;
 	}
 	
 	&.disabled {
@@ -40,14 +40,11 @@
 @include keyframes(pulse_animation) {
 	0% { 
 		opacity: .5; 
-		@include transform( scale(1) );
 	}
 	50% { 
 		opacity: 1; 
-		@include transform( scale(1.1) );
 	}
 	100% { 
 		opacity: .5; 
-		@include transform( scale(1) );
 	}
 }
