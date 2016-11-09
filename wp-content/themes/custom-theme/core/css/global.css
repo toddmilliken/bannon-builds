@@ -625,7 +625,7 @@ ol li:before {
   left: 50%;
   width: 50px;
 }
-/* line 30, ../sass/base/_loading-indicator.scss */
+/* line 31, ../sass/base/_loading-indicator.scss */
 .loading-indicator.disabled {
   -moz-transition: opacity 500ms ease 0ms, visibility 0ms linear 500ms;
   -o-transition: opacity 500ms ease 0ms, visibility 0ms linear 500ms;
