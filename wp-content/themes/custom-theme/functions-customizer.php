@@ -22,15 +22,18 @@
  */ 
 function base_customizer_register( $wp_customize ) 
 {
-	
-	$wp_customize->add_section( 'section_id', array(
-		'priority' => 10,
-		'capability' => 'edit_theme_options',
-		'theme_supports' => '',
-		'title' => 'Example Section',
-		'description' => '',
-		'panel' => 'header_image',
+
+	// add color picker setting
+	$wp_customize->add_setting( 'header_bg_color', array(
+		'default' => '#3e4826'
 	) );
+	
+	// add color picker control
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'header_bg_color', array(
+		'label' => 'Header Background Color',
+		'section' => 'colors',
+		'settings' => 'header_bg_color',
+	) ) );
 
 }
 add_action( 'customize_register', 'base_customizer_register' );
@@ -38,11 +41,15 @@ add_action( 'customize_register', 'base_customizer_register' );
 
 
 function base_update_customizer_header()
-{
+{	
 
   ?>
 
 	<style type="text/css">
+		
+		.masthead {
+			background-color: <?php echo get_theme_mod( 'header_bg_color' ); ?> !important;
+		}
 		
 		.masthead-bg { 
 			background-image: url(<?php echo( get_header_image() ); ?>) !important; 
@@ -103,3 +110,10 @@ function custom_header_defaults()
 	
 }
 add_action( 'after_setup_theme', 'custom_header_defaults' );
+
+
+
+
+/**
+ * Adds custom background support
+ */
