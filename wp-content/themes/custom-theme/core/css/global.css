@@ -613,6 +613,7 @@ ol li:before {
   -moz-animation-timing-function: linear;
   -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
+  backface-visibility: hidden;
   background-image: url(../images/logo-sign_50.svg);
   background-position: 50% 50%;
   background-repeat: no-repeat;
