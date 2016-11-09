@@ -1312,7 +1312,7 @@ select::-ms-expand {
 /* line 1, ../sass/layout/_masthead.scss */
 .masthead {
   background-color: #333;
-  height: 17.5em;
+  height: 11.25em;
   padding-top: 4.4375em;
   position: relative;
 }
@@ -1354,25 +1354,24 @@ select::-ms-expand {
 
 /* line 41, ../sass/layout/_masthead.scss */
 .masthead-content {
-  padding: 1.25em 0;
   position: relative;
 }
 
 @media (max-width: 43.75em) {
-  /* line 49, ../sass/layout/_masthead.scss */
+  /* line 48, ../sass/layout/_masthead.scss */
   .masthead {
     height: auto;
   }
-  /* line 52, ../sass/layout/_masthead.scss */
+  /* line 51, ../sass/layout/_masthead.scss */
   .masthead-title {
     margin-bottom: 0;
   }
-  /* line 56, ../sass/layout/_masthead.scss */
+  /* line 55, ../sass/layout/_masthead.scss */
   .masthead-content {
     padding: 1.875em 0;
   }
 
-  /* line 62, ../sass/layout/_masthead.scss */
+  /* line 61, ../sass/layout/_masthead.scss */
   .masthead-bg {
     display: none;
   }
