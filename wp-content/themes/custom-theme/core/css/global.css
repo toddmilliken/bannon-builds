@@ -2274,28 +2274,55 @@ select::-ms-expand {
   }
   /* line 100, ../sass/templates/_tmpl-layers.scss */
   .layer__content {
+    -js-display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     padding: 3.125em 2.5em;
   }
-  /* line 105, ../sass/templates/_tmpl-layers.scss */
+  /* line 107, ../sass/templates/_tmpl-layers.scss */
+  .layer__content-inner {
+    max-width: 36.5625em;
+    width: 100%;
+  }
+  /* line 116, ../sass/templates/_tmpl-layers.scss */
   .layer:nth-of-type(even) .layer__image {
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
   }
-  /* line 112, ../sass/templates/_tmpl-layers.scss */
+  /* line 123, ../sass/templates/_tmpl-layers.scss */
   .layer:nth-of-type(even) .layer__content {
     -webkit-align-self: flex-end;
     -moz-align-self: flex-end;
     -ms-flex-item-align: end;
     align-self: flex-end;
+    padding-left: 2.5em;
   }
-  /* line 118, ../sass/templates/_tmpl-layers.scss */
+  /* line 132, ../sass/templates/_tmpl-layers.scss */
   .layer:nth-of-type(odd) .layer__image {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
+  }
+  /* line 139, ../sass/templates/_tmpl-layers.scss */
+  .layer:nth-of-type(odd) .layer__content {
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    -webkit-align-items: flex-end;
+    -moz-align-items: flex-end;
+    align-items: flex-end;
+    padding-right: 0;
   }
 }
 /*---------------------------------------------------------

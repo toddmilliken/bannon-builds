@@ -98,10 +98,21 @@
 		}		
 		
 		&__content {
+			@include flexbox; 			
+			@include flex-direction(column);
 			padding: em(50) em(40);
 		}
 		
+		
+		&__content-inner {
+			max-width: em( $width-center / 2 );
+			width: 100%;
+		}
+		
+		
+		
 		&:nth-of-type(even) {
+
 			.layer__image {
 				position: absolute;
 					top: 0;
@@ -111,16 +122,25 @@
 			
 			.layer__content {
 				@include align-self(flex-end);
+				padding-left: em(40);
 			}
 		}		
 		
+		
 		&:nth-of-type(odd) {	
+			
 			.layer__image {
 				position: absolute;
 					top: 0;
 					right: 0;
 					bottom: 0;
 			}
+			
+			.layer__content {
+				@include align-items(flex-end);
+				padding-right: 0;
+			}
+			
 		}
 		
 		
