@@ -2300,7 +2300,7 @@ select::-ms-expand {
     -moz-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
-    padding: 3.125em 2.5em;
+    padding: 3.125em 1.25em;
   }
   /* line 107, ../sass/templates/_tmpl-layers.scss */
   .layer__content-inner {

@@ -100,7 +100,7 @@
 		&__content {
 			@include flexbox; 			
 			@include flex-direction(column);
-			padding: em(50) em(40);
+			padding: em(50) em(20); 
 		}
 		
 		
