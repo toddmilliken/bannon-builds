@@ -589,30 +589,9 @@ ol li:before {
   bottom: 0;
   left: 0;
   z-index: 999;
-  /*
-  	&:after {
-  		@include transform( translate( -50%, -50% ) );
-  		@include transition( opacity 250ms ease 0s );
-  		@include animation-name(pulse_animation);
-  		@include animation-duration(1500ms);
-  		@include animation-iteration-count(infinite);
-  		@include animation-timing-function(linear);
-  		backface-visibility: hidden;
-  		background-image: url(../images/logo-sign.png);
-  		background-position: 50% 50%;
-  		background-repeat: no-repeat;
-  		background-size: 161px 161px;	
-  		content: "";
-  		height: 161px;
-  		position: absolute;
-  			top: 50%;
-  			left: 50%;
-  		width: 161px;
-  	}
-  */
 }
-/* line 33, ../sass/base/_loading-indicator.scss */
-.loading-indicator .loading-indicator__icon {
+/* line 12, ../sass/base/_loading-indicator.scss */
+.loading-indicator__icon {
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
@@ -623,13 +602,15 @@ ol li:before {
   left: 50%;
   width: 161px;
 }
-/* line 42, ../sass/base/_loading-indicator.scss */
+/* line 21, ../sass/base/_loading-indicator.scss */
 .loading-indicator.disabled {
   -moz-transition: opacity 500ms ease 0ms, visibility 0ms linear 500ms;
   -o-transition: opacity 500ms ease 0ms, visibility 0ms linear 500ms;
   -webkit-transition: opacity 500ms ease, visibility 0ms linear;
   -webkit-transition-delay: 0ms, 500ms;
   transition: opacity 500ms ease 0ms, visibility 0ms linear 500ms;
+  opacity: 0;
+  visibility: hidden;
 }
 
 @-moz-keyframes pulse_animation {
