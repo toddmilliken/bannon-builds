@@ -8,7 +8,7 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-	<div class="loading-indicator"></div>
+	<?php Custom_Parts::loading_indicator(); ?>
 	<header class="site-head">
 		<?php
 			echo '

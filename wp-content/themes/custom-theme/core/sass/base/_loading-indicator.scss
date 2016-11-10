@@ -8,6 +8,7 @@
 		left: 0;
 		z-index: 999;
 		
+/*
 	&:after {
 		@include transform( translate( -50%, -50% ) );
 		@include transition( opacity 250ms ease 0s );
@@ -27,11 +28,21 @@
 			left: 50%;
 		width: 161px;
 	}
+*/
+
+	&__icon {
+		@include transform( translate( -50%, -50% ) );
+		height: 161px;
+		position: absolute;
+			top: 50%;
+			left: 50%;
+		width: 161px;
+	}
 	
 	&.disabled {
 		@include transition( opacity 500ms ease 0ms, visibility 0ms linear 500ms );
-		opacity: 0;
-		visibility: hidden;
+		//opacity: 0;
+		//visibility: hidden;
 	}
 	
 }
