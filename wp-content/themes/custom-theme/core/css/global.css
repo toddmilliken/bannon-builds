@@ -575,6 +575,77 @@ ol li:before {
     width: auto;
   }
 }
+/* line 1, ../sass/base/_loading-indicator.scss */
+.loading-indicator {
+  -moz-transition: opacity 500ms ease 0ms, visibility 0ms linear 0ms;
+  -o-transition: opacity 500ms ease 0ms, visibility 0ms linear 0ms;
+  -webkit-transition: opacity 500ms ease, visibility 0ms linear;
+  -webkit-transition-delay: 0ms, 0ms;
+  transition: opacity 500ms ease 0ms, visibility 0ms linear 0ms;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+}
+/* line 12, ../sass/base/_loading-indicator.scss */
+.loading-indicator__icon {
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  height: 161px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 161px;
+}
+/* line 21, ../sass/base/_loading-indicator.scss */
+.loading-indicator.disabled {
+  -moz-transition: opacity 500ms ease 0ms, visibility 0ms linear 500ms;
+  -o-transition: opacity 500ms ease 0ms, visibility 0ms linear 500ms;
+  -webkit-transition: opacity 500ms ease, visibility 0ms linear;
+  -webkit-transition-delay: 0ms, 500ms;
+  transition: opacity 500ms ease 0ms, visibility 0ms linear 500ms;
+  opacity: 0;
+  visibility: hidden;
+}
+
+@-moz-keyframes pulse_animation {
+  0% {
+    opacity: .5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .5;
+  }
+}
+@-webkit-keyframes pulse_animation {
+  0% {
+    opacity: .5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .5;
+  }
+}
+@keyframes pulse_animation {
+  0% {
+    opacity: .5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .5;
+  }
+}
 /* line 5, ../sass/components/_forms.scss */
 label {
   color: #333;

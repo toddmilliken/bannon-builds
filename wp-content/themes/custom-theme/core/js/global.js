@@ -19,7 +19,19 @@
 
   $(window).load(function($) {
       initLazyLoadBackground();
+      initLoadingIndicator();
   });
+    
+    
+  
+  var initLoadingIndicator = function() {
+	  setTimeout(function(){
+//			$('.site-head').addClass('site-head--show-on-hover');
+			$('.loading-indicator').addClass('disabled');
+		}, 250);
+	  
+  }
+    
     
   //---
   // FRONT PAGE FUNCTIONALITY
