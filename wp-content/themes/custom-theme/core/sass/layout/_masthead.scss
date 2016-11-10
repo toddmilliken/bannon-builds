@@ -1,6 +1,5 @@
 .masthead {
 	background-color: #333;
-	height: em(180);
 	padding-top: em($header-desktop);
 	position: relative;
 }
@@ -28,19 +27,8 @@
 	font-size: em(48);
 	font-weight: 300;
 	line-height: 1.1;
-}
-
-.masthead .tble {
-	width: 100%;
-}
-
-.masthead .tble-cell {
-	vertical-align: bottom;
-}
-
-.masthead-content {	
-	//background: rgba(0,0,0,0.2);
-	position: relative;
+	margin-bottom: 0;
+	padding: 12px 0 8px;
 }
 
 @include smartphone-landscape-down {

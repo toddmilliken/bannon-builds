@@ -49,12 +49,7 @@
 				<span data-src="<?php echo get_template_directory_uri() . '/core/image/blank.gif'; ?>" data-media="(max-width: 680px)"></span>
 			</div>			
 		<?php endif; ?>
-		<div class="tble">
-			<div class="tble-cell">
-				<div class="masthead-content">
-					<div class="inner">
-						<h1 class="masthead-title"<?php echo ( ! empty($masthead['text_color']) ? ' style="color: #' . sanitize_hex_color_no_hash($masthead['text_color']) . ' !important"' : '' ); ?>><?php echo Custom_Client::get_page_title(false); ?></h1>
-					</div>
-				</div>
+		<div class="inner">
+			<h1 class="masthead-title"<?php echo ( ! empty($masthead['text_color']) ? ' style="color: #' . sanitize_hex_color_no_hash($masthead['text_color']) . ' !important"' : '' ); ?>><?php echo Custom_Client::get_page_title(false); ?></h1>
 		</div>
 	</section>

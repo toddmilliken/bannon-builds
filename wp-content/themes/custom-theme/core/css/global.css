@@ -1383,12 +1383,11 @@ select::-ms-expand {
 /* line 1, ../sass/layout/_masthead.scss */
 .masthead {
   background-color: #333;
-  height: 11.25em;
   padding-top: 4.4375em;
   position: relative;
 }
 
-/* line 8, ../sass/layout/_masthead.scss */
+/* line 7, ../sass/layout/_masthead.scss */
 .masthead-bg {
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -1400,49 +1399,36 @@ select::-ms-expand {
   bottom: 0;
   left: 0;
 }
-/* line 20, ../sass/layout/_masthead.scss */
+/* line 19, ../sass/layout/_masthead.scss */
 .masthead-bg.ready {
   opacity: 1;
 }
 
-/* line 26, ../sass/layout/_masthead.scss */
+/* line 25, ../sass/layout/_masthead.scss */
 .masthead-title {
   color: #fff;
   font-size: 3em;
   font-weight: 300;
   line-height: 1.1;
-}
-
-/* line 33, ../sass/layout/_masthead.scss */
-.masthead .tble {
-  width: 100%;
-}
-
-/* line 37, ../sass/layout/_masthead.scss */
-.masthead .tble-cell {
-  vertical-align: bottom;
-}
-
-/* line 41, ../sass/layout/_masthead.scss */
-.masthead-content {
-  position: relative;
+  margin-bottom: 0;
+  padding: 12px 0 8px;
 }
 
 @media (max-width: 43.75em) {
-  /* line 48, ../sass/layout/_masthead.scss */
+  /* line 36, ../sass/layout/_masthead.scss */
   .masthead {
     height: auto;
   }
-  /* line 51, ../sass/layout/_masthead.scss */
+  /* line 39, ../sass/layout/_masthead.scss */
   .masthead-title {
     margin-bottom: 0;
   }
-  /* line 55, ../sass/layout/_masthead.scss */
+  /* line 43, ../sass/layout/_masthead.scss */
   .masthead-content {
     padding: 1.875em 0;
   }
 
-  /* line 61, ../sass/layout/_masthead.scss */
+  /* line 49, ../sass/layout/_masthead.scss */
   .masthead-bg {
     display: none;
   }
