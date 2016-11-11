@@ -1,11 +1,33 @@
 <?php
-
+add_action('wp_head', array('Custom_Client', 'ga_tracking'));
 add_action('login_head', array('Custom_Client','wp_login_client_logo'));
 add_action('pre_get_posts', array('Custom_Client', 'theme_search_settings'));
 add_action('login_head', array('Custom_Client','wp_login_client_logo'));
 
 class Custom_Client extends Custom_Theme
 {
+	
+	public static function ga_tracking() {
+		
+		if ( $ga_id = get_field('opts_ga_id', 'options') ) {
+			?>
+			
+<!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', '<?php echo $ga_id; ?>', 'auto');
+ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+			<?php 
+		}
+		
+	}
 	
 	public static function get_page_title( $echo = true ) {
 
