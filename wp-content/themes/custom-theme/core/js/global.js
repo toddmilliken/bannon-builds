@@ -25,10 +25,12 @@
     
   
   var initLoadingIndicator = function() {
-	  setTimeout(function(){
-//			$('.site-head').addClass('site-head--show-on-hover');
-			$('.loading-indicator').addClass('disabled');
-		}, 250);
+	  
+	  if ( $('body').hasClass('home') ) {
+		  setTimeout(function(){
+				$('.loading-indicator').addClass('disabled');
+			}, 250);
+		}
 	  
   }
     

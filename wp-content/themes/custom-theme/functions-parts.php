@@ -5,6 +5,10 @@ class Custom_Parts extends Custom_Theme
 	
 	public static function loading_indicator() 
 	{
+		
+		if ( ! is_front_page() )
+			return;
+		
 		?>
 			
 			
