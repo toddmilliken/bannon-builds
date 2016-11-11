@@ -1,5 +1,5 @@
 require 'compass'
-environment = :development
+environment = :production
 preferred_syntax = :sass
 http_path = '/'
 css_dir = 'css'
