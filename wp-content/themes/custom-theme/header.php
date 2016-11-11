@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<title><?php wp_title(); ?></title>
 	<link rel="stylesheet" href="<?php echo esc_url( get_stylesheet_uri() ); ?>" type="text/css" />
+	<link rel="sitemap" href="<?php echo home_url('sitemap_index.xml'); ?>" />
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
